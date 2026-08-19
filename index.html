@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francisco González | Auto-Leader & Senior Software Engineer</title>
+  <meta name="description" content="Sitio personal y portafolio profesional de Francisco González en formato estático seguro inspirad en Sawad. Tech Lead, Java, ColdFusion, ASP, PHP y desarrollo de proyectos.">
+  <meta name="author" content="Francisco González">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+
+  <!-- Floating Sawad Navigation Pill -->
+  <nav class="floating-nav">
+    <a href="#inicio" class="nav-brand-text">
+      <span class="brand-dot"></span>
+      <span>fgonzalez<span style="color:var(--accent-orange);">.cl</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#seguridad">Seguridad</a></li>
+    </ul>
+    <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank" rel="noopener noreferrer" class="btn-nav-action">LinkedIn&nbsp;↗</a>
+  </nav>
+
+  <!-- App Main Grid Container -->
+  <div class="app-container" id="inicio">
+    <div class="sawad-grid">
+      
+      <!-- Left Column: Sticky Profile Card -->
+      <aside class="sticky-profile-column">
+        <div class="profile-card">
+          <div class="profile-avatar-box">
+            <img src="assets/avatar.png" alt="Francisco González Portrait">
+          </div>
+          
+          <div class="flame-badge" title="Auto-Leader & Engineer">🔥</div>
+          
+          <h1 class="profile-name">Francisco González</h1>
+          
+          <p class="profile-bio">
+            Auto-Leader & Senior Software Engineer con más de 10 años creando soluciones de software, liderando equipos técnicos y desarrollando proyectos de innovación.
+          </p>
+
+          <div style="font-size:0.8rem; font-weight:600; color:var(--accent-orange); margin-bottom:1.5rem; background:rgba(244,108,56,0.1); padding:0.4rem 1rem; border-radius:9999px;">
+            🟢 Sitio 100% Estático & Seguro
+          </div>
+
+          <div class="profile-socials">
+            <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.262-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#contacto" class="social-icon-btn" title="Enviar Mensaje / Contacto">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Column: Main Content -->
+      <main class="main-content-column">
+
+        <!-- Section 1: Experience -->
+        <section id="experiencia">
+          <div class="sawad-section-title">
+            <span class="title-line-1">+10 AÑOS DE</span>
+            <span class="title-line-2">EXPERIENCIA</span>
+          </div>
+
+          <div class="experience-list" id="experienceList">
+            <!-- Rendered by main.js -->
+          </div>
+        </section>
+
+        <!-- Section 2: Projects -->
+        <section id="proyectos">
+          <div class="sawad-section-title">
+            <span class="title-line-1">PROYECTOS</span>
+            <span class="title-line-2">DESTACADOS</span>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Rendered by main.js -->
+          </div>
+        </section>
+
+        <!-- Section 3: Tech Stack & Tools -->
+        <section id="stack">
+          <div class="sawad-section-title">
+            <span class="title-line-1">HERRAMIENTAS</span>
+            <span class="title-line-2">& TECNOLOGÍAS</span>
+          </div>
+
+          <div class="tools-grid" id="toolsGrid">
+            <!-- Rendered by main.js -->
+          </div>
+        </section>
+
+        <!-- Section 4: Static Security Notice -->
+        <section id="seguridad">
+          <div class="sawad-section-title">
+            <span class="title-line-1">SEGURIDAD</span>
+            <span class="title-line-2">SITIO ESTÁTICO</span>
+          </div>
+
+          <div class="security-sawad-box">
+            <div class="sec-icon">🛡️</div>
+            <div>
+              <h3 class="sec-title">Migración Completa de WordPress a GitHub Pages</h3>
+              <p class="sec-desc">
+                Anteriormente el sitio sufría de vulnerabilidades continuas debido a PHP y base de datos MySQL en WordPress. Con esta nueva arquitectura estática servida vía CDN en GitHub Pages, hemos eliminado al 100% los vectores de ataque de servidor, obteniendo máxima velocidad de carga y costo cero.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Contact CTA -->
+        <section id="contacto" class="contact-section">
+          <h2 class="contact-title">¿CONECTAMOS?</h2>
+          <p class="contact-subtitle">
+            Disponible para liderazgo de proyectos tecnológicos, arquitectura de sistemas y colaboración en software.
+          </p>
+          <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank" rel="noopener noreferrer" class="btn-contact-main">Contactar en LinkedIn&nbsp;↗</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-sawad">
+          <div>&copy; 2026 Francisco González. Todos los derechos reservados.</div>
+          <div>Hosting Estático en <strong style="color:var(--text-white);">GitHub Pages</strong></div>
+        </footer>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-backdrop" id="detailsModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar modal">&times;</button>
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" id="modalIcon">⚡</div>
+      <h3 style="font-size: 1.6rem; margin-bottom: 0.25rem;" id="modalTitle">Título</h3>
+      <div style="font-size: 0.85rem; color: var(--accent-orange); font-weight: 600; margin-bottom: 1.25rem;" id="modalCategory">Categoría</div>
+      <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;" id="modalDetails">
+        Detalles...
+      </p>
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="modalTags"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
