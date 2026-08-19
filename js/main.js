@@ -274,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    document.getElementById("modalIcon").textContent = item.icon || "⚡";
     document.getElementById("modalTitle").textContent = item.title;
     document.getElementById("modalCategory").textContent = (item.company || item.category || "") + (item.date ? " • " + item.date : "");
     document.getElementById("modalDetails").innerText = item.details;
