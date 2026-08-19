@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Francisco González | Auto-Leader & Senior Software Engineer</title>
-  <meta name="description" content="Sitio personal y portafolio profesional de Francisco González en formato estático seguro inspirad en Sawad. Tech Lead, Java, ColdFusion, ASP, PHP y desarrollo de proyectos.">
+  <meta name="description" content="Sitio personal y portafolio profesional de Francisco González. Tech Lead, Java, ColdFusion, ASP, PHP y desarrollo de proyectos.">
   <meta name="author" content="Francisco González">
   
   <!-- CSS Stylesheet -->
@@ -24,8 +24,9 @@
     <ul class="nav-links">
       <li><a href="#experiencia">Experiencia</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#pasiones">Hobbies</a></li>
       <li><a href="#stack">Stack</a></li>
-      <li><a href="#seguridad">Seguridad</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank" rel="noopener noreferrer" class="btn-nav-action">LinkedIn&nbsp;↗</a>
   </nav>
@@ -48,10 +49,6 @@
           <p class="profile-bio">
             Auto-Leader & Senior Software Engineer con más de 10 años creando soluciones de software, liderando equipos técnicos y desarrollando proyectos de innovación.
           </p>
-
-          <div style="font-size:0.8rem; font-weight:600; color:var(--accent-orange); margin-bottom:1.5rem; background:rgba(244,108,56,0.1); padding:0.4rem 1rem; border-radius:9999px;">
-            🟢 Sitio 100% Estático & Seguro
-          </div>
 
           <div class="profile-socials">
             <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
@@ -91,7 +88,19 @@
           </div>
         </section>
 
-        <!-- Section 3: Tech Stack & Tools -->
+        <!-- Section 3: Hobbies & Passions -->
+        <section id="pasiones">
+          <div class="sawad-section-title">
+            <span class="title-line-1">INTERESES</span>
+            <span class="title-line-2">& HOBBIES</span>
+          </div>
+
+          <div class="projects-grid" id="passionsGrid">
+            <!-- Rendered by main.js -->
+          </div>
+        </section>
+
+        <!-- Section 4: Tech Stack & Tools -->
         <section id="stack">
           <div class="sawad-section-title">
             <span class="title-line-1">HERRAMIENTAS</span>
@@ -100,24 +109,6 @@
 
           <div class="tools-grid" id="toolsGrid">
             <!-- Rendered by main.js -->
-          </div>
-        </section>
-
-        <!-- Section 4: Static Security Notice -->
-        <section id="seguridad">
-          <div class="sawad-section-title">
-            <span class="title-line-1">SEGURIDAD</span>
-            <span class="title-line-2">SITIO ESTÁTICO</span>
-          </div>
-
-          <div class="security-sawad-box">
-            <div class="sec-icon">🛡️</div>
-            <div>
-              <h3 class="sec-title">Migración Completa de WordPress a GitHub Pages</h3>
-              <p class="sec-desc">
-                Anteriormente el sitio sufría de vulnerabilidades continuas debido a PHP y base de datos MySQL en WordPress. Con esta nueva arquitectura estática servida vía CDN en GitHub Pages, hemos eliminado al 100% los vectores de ataque de servidor, obteniendo máxima velocidad de carga y costo cero.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -145,7 +136,8 @@
   <div class="modal-backdrop" id="detailsModal">
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="Cerrar modal">&times;</button>
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" id="modalIcon">⚡</div>
+      <img id="modalImgPreview" class="modal-img-preview" src="" alt="Preview">
+      <div style="font-size: 2rem; margin-bottom: 0.25rem;" id="modalIcon">⚡</div>
       <h3 style="font-size: 1.6rem; margin-bottom: 0.25rem;" id="modalTitle">Título</h3>
       <div style="font-size: 0.85rem; color: var(--accent-orange); font-weight: 600; margin-bottom: 1.25rem;" id="modalCategory">Categoría</div>
       <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;" id="modalDetails">

@@ -371,6 +371,40 @@ body {
   transform: rotate(45deg);
 }
 
+.card-img-thumb {
+  width: 100%;
+  height: 190px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-dark);
+  transition: transform var(--transition-fast);
+  background: var(--bg-dark-tertiary);
+}
+
+.project-card-sawad:hover .card-img-thumb {
+  transform: scale(1.02);
+}
+
+.exp-thumb-box {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--border-dark);
+  flex-shrink: 0;
+  background: var(--bg-dark-tertiary);
+}
+
+.modal-img-preview {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-dark);
+}
+
 /* Projects Cards Grid (Sawad Style) */
 .projects-grid {
   display: grid;
