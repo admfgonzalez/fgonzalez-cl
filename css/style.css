@@ -168,6 +168,59 @@ body {
   box-shadow: 0 4px 15px var(--accent-glow);
 }
 
+/* Fixed Top-Right Corner Language Selector with Flags */
+.fixed-lang-corner {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1005;
+  background: rgba(26, 24, 23, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-dark);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-fast);
+}
+
+.fixed-lang-corner:hover {
+  border-color: rgba(244, 108, 56, 0.4);
+  box-shadow: 0 10px 30px rgba(244, 108, 56, 0.25);
+}
+
+.fixed-lang-corner .lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.fixed-lang-corner .lang-btn.active {
+  color: var(--accent-orange);
+  background: rgba(244, 108, 56, 0.15);
+}
+
+.fixed-lang-corner .lang-btn:hover {
+  color: var(--text-white);
+}
+
+.fixed-lang-corner .lang-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+}
+
 /* Left Column: Sticky Profile Card */
 .sticky-profile-column {
   position: sticky;
@@ -862,6 +915,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .fixed-lang-corner {
+    top: 0.85rem;
+    right: 0.85rem;
+    padding: 0.25rem 0.55rem;
+  }
+  .fixed-lang-corner .lang-btn {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.78rem;
+  }
   .title-line-1, .title-line-2 {
     font-size: 2.1rem;
   }

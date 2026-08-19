@@ -20,6 +20,17 @@
 
 <body>
 
+  <!-- Fixed Top-Right Corner Language Switcher with Flags -->
+  <div class="fixed-lang-corner" aria-label="Seleccionar idioma / Select language">
+    <button class="lang-btn active" id="btnLangEs" data-lang="es" title="Español (Predeterminado)">
+      <span>🇪🇸</span> <span>ES</span>
+    </button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" id="btnLangEn" data-lang="en" title="English">
+      <span>🇺🇸</span> <span>EN</span>
+    </button>
+  </div>
+
   <!-- Floating Sawad Navigation Pill -->
   <nav class="floating-nav">
     <a href="#inicio" class="nav-brand-text">
@@ -27,14 +38,15 @@
       <span>fgonzalez<span style="color:var(--accent-orange);">.cl</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#pasiones">Hobbies</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#experiencia" data-i18n="navExp">Experiencia</a></li>
+      <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
+      <li><a href="#pasiones" data-i18n="navHobbies">Hobbies</a></li>
+      <li><a href="#stack" data-i18n="navStack">Stack</a></li>
+      <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
     </ul>
+    
     <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank" rel="noopener noreferrer"
-      class="btn-nav-action">LinkedIn&nbsp;↗</a>
+      class="btn-nav-action" data-i18n="btnLinkedInNav">LinkedIn&nbsp;↗</a>
   </nav>
 
   <!-- App Main Grid Container -->
@@ -55,13 +67,13 @@
 
           <h1 class="profile-name">Francisco González</h1>
 
-          <p class="profile-bio">
+          <p class="profile-bio" data-i18n="profileBio">
             Auto-Leader & Senior Software Engineer con más de 10 años creando soluciones de software, liderando equipos
             técnicos y desarrollando proyectos de innovación.
           </p>
 
           <!-- Clickable button to open About Me Modal -->
-          <button class="btn-about-modal" id="btnAboutMeModal">
+          <button class="btn-about-modal" id="btnAboutMeModal" data-i18n="btnAboutMe">
             Sobre mí (Historia & Valores) ↗
           </button>
 
@@ -91,8 +103,8 @@
         <!-- Section 1: Experience -->
         <section id="experiencia">
           <div class="sawad-section-title">
-            <span class="title-line-1">+10 AÑOS DE</span>
-            <span class="title-line-2">EXPERIENCIA</span>
+            <span class="title-line-1" data-i18n="expTitle1">+10 AÑOS DE</span>
+            <span class="title-line-2" data-i18n="expTitle2">EXPERIENCIA</span>
           </div>
 
           <div class="experience-list" id="experienceList">
@@ -103,8 +115,8 @@
         <!-- Section 2: Projects -->
         <section id="proyectos">
           <div class="sawad-section-title">
-            <span class="title-line-1">PROYECTOS</span>
-            <span class="title-line-2">DESTACADOS</span>
+            <span class="title-line-1" data-i18n="projTitle1">PROYECTOS</span>
+            <span class="title-line-2" data-i18n="projTitle2">DESTACADOS</span>
           </div>
 
           <div class="projects-grid" id="projectsGrid">
@@ -115,8 +127,8 @@
         <!-- Section 3: Hobbies & Passions -->
         <section id="pasiones">
           <div class="sawad-section-title">
-            <span class="title-line-1">INTERESES</span>
-            <span class="title-line-2">& HOBBIES</span>
+            <span class="title-line-1" data-i18n="pasTitle1">INTERESES</span>
+            <span class="title-line-2" data-i18n="pasTitle2">& HOBBIES</span>
           </div>
 
           <div class="projects-grid" id="passionsGrid">
@@ -127,8 +139,8 @@
         <!-- Section 4: Tech Stack & Tools -->
         <section id="stack">
           <div class="sawad-section-title">
-            <span class="title-line-1">HERRAMIENTAS</span>
-            <span class="title-line-2">& TECNOLOGÍAS</span>
+            <span class="title-line-1" data-i18n="stackTitle1">HERRAMIENTAS</span>
+            <span class="title-line-2" data-i18n="stackTitle2">& TECNOLOGÍAS</span>
           </div>
 
           <div class="tools-grid" id="toolsGrid">
@@ -138,17 +150,17 @@
 
         <!-- Section 5: Contact CTA -->
         <section id="contacto" class="contact-section">
-          <h2 class="contact-title">¿CONECTAMOS?</h2>
-          <p class="contact-subtitle">
+          <h2 class="contact-title" data-i18n="contactTitle">¿CONECTAMOS?</h2>
+          <p class="contact-subtitle" data-i18n="contactSubtitle">
             Disponible para liderazgo de proyectos tecnológicos, arquitectura de sistemas y colaboración en software.
           </p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-            <a href="mailto:administrator@fgonzalez.cl" class="btn-contact-main"
-              style="background: var(--accent-orange); color: #ffffff; border: none;">
+            <a href="mailto:administrator@fgonzalez.cl" class="btn-contact-main" id="btnContactEmail"
+              style="background: var(--accent-orange); color: #ffffff; border: none;" data-i18n="btnEmail">
               Enviar Email ✉️ (administrator@fgonzalez.cl)
             </a>
             <a href="https://www.linkedin.com/in/francisco-gonz%C3%A1lez-a811aa35/" target="_blank"
-              rel="noopener noreferrer" class="btn-contact-main">
+              rel="noopener noreferrer" class="btn-contact-main" data-i18n="btnLinkedIn">
               LinkedIn&nbsp;↗
             </a>
           </div>
@@ -156,8 +168,8 @@
 
         <!-- Footer -->
         <footer class="footer-sawad">
-          <div>&copy; 2026 Francisco González. Todos los derechos reservados.</div>
-          <div>Hosting Estático en <strong style="color:var(--text-white);">GitHub Pages</strong></div>
+          <div data-i18n="footerCopy">&copy; 2026 Francisco González. Todos los derechos reservados.</div>
+          <div><span data-i18n="footerHost">Hosting Estático en</span> <strong style="color:var(--text-white);">GitHub Pages</strong></div>
         </footer>
 
       </main>
