@@ -1,7 +1,50 @@
 /* ==========================================================================
    fgonzalez.cl - Sawad Framer Template Logic
-   Handles portfolio interactions, modal detail dialogs, images & filters
+   Handles portfolio interactions, modal detail dialogs, images & heroes section
    ========================================================================== */
+
+// About Me Modal Data
+const aboutMeData = {
+  id: "sobre-mi-modal",
+  title: "Francisco González • Historia & Valores",
+  company: "Software Engineer & Maker",
+  date: "+10 Años de Trayectoria",
+  image: "assets/heroes/foto_profile.jpg",
+  icon: "👨‍💻",
+  details: "Hola, soy Francisco González, ingeniero de software y creador. Curioso por naturaleza respecto al conocimiento técnico, con altas habilidades para el aprendizaje autodidacta, empático y colaborador con mis compañeros de equipo.\n\nApasionado por trabajar en equipo, aportando constantemente nuevas ideas alineadas con tecnologías emergentes, patrones de arquitectura limpia y optimización de procesos de programación.",
+  tags: ["Software Engineer", "Auto-Leader", "Maker", "Arquitectura Clean", "Trabajo en Equipo"]
+};
+
+// Core Engineering Skills
+const coreEngineeringSkills = [
+  { icon: "💡", name: "Problem-solving skills" },
+  { icon: "👁️", name: "Visualizing ideas" },
+  { icon: "💻", name: "Programming languages" },
+  { icon: "🎯", name: "Attention to detail" },
+  { icon: "🤝", name: "Collaborating with other developers" },
+  { icon: "🌱", name: "Self-development skills" },
+  { icon: "🧩", name: "Experience on OOP" }
+];
+
+// Technical Skills & Levels from fgonzalez.cl/aboutme/
+const technicalSkills = [
+  { name: "Java", level: "Advanced", percent: 90 },
+  { name: "Javascript", level: "Intermediate", percent: 75 },
+  { name: "Typescript", level: "Intermediate", percent: 70 },
+  { name: "AngularJS", level: "Intermediate", percent: 65 },
+  { name: "SQL", level: "Intermediate", percent: 75 },
+  { name: "NoSQL", level: "Novice", percent: 50 },
+  { name: "CSS", level: "Intermediate", percent: 70 },
+  { name: "UML", level: "Intermediate", percent: 75 },
+  { name: "PHP", level: "Intermediate", percent: 75 },
+  { name: "Wordpress", level: "Intermediate", percent: 70 },
+  { name: "Docker", level: "Novice", percent: 50 },
+  { name: "GNU Bash", level: "Intermediate", percent: 70 },
+  { name: "BPMN (JBPM / Activiti)", level: "Intermediate", percent: 70 },
+  { name: "Git", level: "Intermediate", percent: 80 },
+  { name: "Maven", level: "Intermediate", percent: 80 },
+  { name: "OS (OSX / Linux)", level: "Intermediate", percent: 75 }
+];
 
 // Experience Data with Original Site Images
 const experienceData = [
@@ -155,6 +198,52 @@ const passionsData = [
   }
 ];
 
+// My Heroes Data (Inspired by fgonzalez.cl/aboutme/)
+const heroesData = [
+  {
+    id: "musashi",
+    name: "Musashi Miyamoto",
+    title: "Estratega & Filósofo Samurai",
+    quote: "You may abandon your own body but you must preserve your honour.",
+    image: "assets/heroes/musashi.jpg"
+  },
+  {
+    id: "ada-lovelace",
+    name: "Ada Lovelace",
+    title: "Matemática & Primera Programadora",
+    quote: "I never am really satisfied that I understand anything; because, understand it well as I may, my comprehension can only be an infinitesimal fraction of all I want to understand...",
+    image: "assets/heroes/ada_lovelace.jpg"
+  },
+  {
+    id: "satoshi-iwata",
+    name: "Satoshi Iwata",
+    title: "Programador & Ex-Presidente de Nintendo",
+    quote: "I am a corporate president. In my mind, I am a game developer. But in my heart, I am a gamer.",
+    image: "assets/heroes/satoshi_iwata.jpg"
+  },
+  {
+    id: "steve-wozniak",
+    name: "Steve Wozniak",
+    title: "Cofundador de Apple & Leyenda Hardware",
+    quote: "Soldering things together, putting the chips together, designing them... it was so much a passion in my life.",
+    image: "assets/heroes/steve_wozniak.jpg"
+  },
+  {
+    id: "linus-torvalds",
+    name: "Linus Torvalds",
+    title: "Creador de Linux Kernel & Git",
+    quote: "Most good programmers do programming not because they expect to get paid, but because it is fun to program.",
+    image: "assets/heroes/linus_torvalds.jpg"
+  },
+  {
+    id: "federico-faggin",
+    name: "Federico Faggin",
+    title: "Físico & Co-inventor del Intel 4004",
+    quote: "Those work can be done easily, if you are doing that repeatedly.",
+    image: "assets/heroes/federico_faggin.jpg"
+  }
+];
+
 // Tools Data
 const toolsData = [
   { name: "Java Enterprise", role: "Backend & Microservicios", icon: "☕" },
@@ -168,6 +257,128 @@ const toolsData = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("detailsModal");
+  const modalClose = document.getElementById("modalClose");
+
+  // Function to open modal dialog
+  function openModalWithData(item) {
+    if (!item || !modal) return;
+
+    const previewImg = document.getElementById("modalImgPreview");
+    if (previewImg) {
+      if (item.image) {
+        previewImg.src = item.image;
+        previewImg.style.display = "block";
+      } else {
+        previewImg.style.display = "none";
+      }
+    }
+
+    document.getElementById("modalIcon").textContent = item.icon || "⚡";
+    document.getElementById("modalTitle").textContent = item.title;
+    document.getElementById("modalCategory").textContent = (item.company || item.category || "") + (item.date ? " • " + item.date : "");
+    document.getElementById("modalDetails").innerText = item.details;
+    
+    const tagsContainer = document.getElementById("modalTags");
+    if (tagsContainer && item.tags) {
+      tagsContainer.innerHTML = item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
+    }
+
+    // Render Skills & My Heroes inside About Me Modal if open
+    const extraContent = document.getElementById("modalExtraContent");
+    if (extraContent) {
+      if (item.id === "sobre-mi-modal") {
+        extraContent.innerHTML = `
+          <!-- Section 1: Skills & Competencias -->
+          <div style="margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--border-dark);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--text-white); margin-bottom: 0.2rem;">
+              ⚡ Skills & Competencias
+            </h4>
+            <div style="font-size: 0.85rem; color: var(--accent-orange); font-weight: 600; margin-bottom: 1.25rem;">
+              Habilidades Blandas & Dominio Técnico
+            </div>
+
+            <!-- Soft / Core Engineering Skills -->
+            <div style="margin-bottom: 1.75rem;">
+              <h5 style="font-size: 0.95rem; color: var(--text-white); margin-bottom: 0.75rem; font-family: var(--font-heading);">Competencias de Ingeniería</h5>
+              <div style="display: flex; gap: 0.55rem; flex-wrap: wrap;">
+                ${coreEngineeringSkills.map(s => `
+                  <span class="skill-soft-pill">${s.icon} ${s.name}</span>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Technical Skills Grid -->
+            <div>
+              <h5 style="font-size: 0.95rem; color: var(--text-white); margin-bottom: 1rem; font-family: var(--font-heading);">Nivel Técnico & Herramientas</h5>
+              <div class="skills-tech-grid">
+                ${technicalSkills.map(tech => `
+                  <div class="skill-tech-item">
+                    <div class="skill-tech-header">
+                      <span class="skill-tech-name">${tech.name}</span>
+                      <span class="skill-tech-level">${tech.level}</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                      <div class="skill-bar-fill" style="width: ${tech.percent}%;"></div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: My Heroes -->
+          <div style="margin-top: 2.25rem; padding-top: 1.75rem; border-top: 1px solid var(--border-dark);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--text-white); margin-bottom: 0.2rem;">
+              ⭐ Mis Héroes
+            </h4>
+            <div style="font-size: 0.85rem; color: var(--accent-orange); font-weight: 600; margin-bottom: 1.25rem;">
+              Inspiración & Mentores
+            </div>
+            <div class="heroes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem;">
+              ${heroesData.map(hero => `
+                <div class="hero-quote-card">
+                  <img src="${hero.image}" alt="${hero.name}" class="hero-card-avatar" loading="lazy">
+                  <div class="hero-card-content">
+                    <h5 class="hero-card-name" style="font-size:1.1rem; margin-bottom:0.15rem;">${hero.name}</h5>
+                    <div class="hero-card-role" style="font-size:0.8rem; margin-bottom:0.5rem;">${hero.title}</div>
+                    <blockquote class="hero-card-quote" style="font-size:0.85rem;">“${hero.quote}”</blockquote>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } else {
+        extraContent.innerHTML = "";
+      }
+    }
+
+    modal.classList.add("active");
+  }
+
+  // About Me Modal trigger handlers
+  const btnAboutMeModal = document.getElementById("btnAboutMeModal");
+  btnAboutMeModal?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openModalWithData(aboutMeData);
+  });
+
+  const profileCard = document.getElementById("profileCard");
+  profileCard?.addEventListener("click", (e) => {
+    // Only trigger if not clicking directly on social links
+    if (!e.target.closest('.profile-socials')) {
+      openModalWithData(aboutMeData);
+    }
+  });
+
+  document.querySelectorAll('a[href="#sobre-mi"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModalWithData(aboutMeData);
+    });
+  });
+
   // Render Experience List
   const experienceContainer = document.getElementById("experienceList");
   if (experienceContainer) {
@@ -243,35 +454,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `).join('');
-  }
-
-  // Modal Setup
-  const modal = document.getElementById("detailsModal");
-  const modalClose = document.getElementById("modalClose");
-
-  function openModalWithData(item) {
-    if (!item || !modal) return;
-
-    const previewImg = document.getElementById("modalImgPreview");
-    if (previewImg) {
-      if (item.image) {
-        previewImg.src = item.image;
-        previewImg.style.display = "block";
-      } else {
-        previewImg.style.display = "none";
-      }
-    }
-
-    document.getElementById("modalIcon").textContent = item.icon || "⚡";
-    document.getElementById("modalTitle").textContent = item.title;
-    document.getElementById("modalCategory").textContent = (item.company || item.category || "") + " • " + (item.date || "");
-    document.getElementById("modalDetails").textContent = item.details;
-    
-    const tagsContainer = document.getElementById("modalTags");
-    if (tagsContainer && item.tags) {
-      tagsContainer.innerHTML = item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
-    }
-    modal.classList.add("active");
   }
 
   // Attach Event Listeners for Experience Modals
