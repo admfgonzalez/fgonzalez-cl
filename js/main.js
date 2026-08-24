@@ -10,6 +10,7 @@ let currentLang = localStorage.getItem('portfolioLang') || 'es';
 const i18n = {
   es: {
     navExp: "Experiencia",
+    navCursos: "Cursos",
     navProjects: "Proyectos",
     navHobbies: "Hobbies",
     navStack: "Stack",
@@ -18,14 +19,32 @@ const i18n = {
     btnAboutMe: "Sobre mí (Historia & Valores) ↗",
     expTitle1: "+10 AÑOS DE",
     expTitle2: "EXPERIENCIA",
+    expTitleMain: "EXPERIENCIA",
+    expBadge: "💼 +13 años en sector financiero & TI",
+    expStat1Badge: "🏦 Finanzas & Banca",
+    expStat1Num: "+13",
+    expStat1Unit: "AÑOS",
+    expStat1Label: "en Instituciones Financieras",
+    expStat2Badge: "🚀 Liderazgo Técnico",
+    expStat2Num: "+5",
+    expStat2Unit: "AÑOS",
+    expStat2Label: "como Líder Técnico",
+    expStat3Badge: "📚 Formación Continua",
+    expStat3Num: "+29",
+    expStat3Unit: "CURSOS",
+    expStat3Label: "Certificaciones & Cursos Técnicos",
     projTitle1: "PROYECTOS",
     projTitle2: "DESTACADOS",
+    projBadge: "📐 Arquitecturas ajustadas a cada proyecto",
     pasTitle1: "INTERESES",
     pasTitle2: "& HOBBIES",
+    pasBadge: "💡 Un maker de corazón",
     stackTitle1: "HERRAMIENTAS",
     stackTitle2: "& TECNOLOGÍAS",
+    stackBadge: "⚡ +15 años en Java",
     contactTitle: "¿CONECTAMOS?",
     contactSubtitle: "Disponible para liderazgo de proyectos tecnológicos, arquitectura de sistemas y colaboración en software.",
+    contactBadge: "🤝 Disponible para nuevos desafíos",
     btnEmail: "Enviar Email ✉️ (administrator@fgonzalez.cl)",
     btnLinkedIn: "LinkedIn ↗",
     btnLinkedInNav: "LinkedIn ↗",
@@ -33,15 +52,25 @@ const i18n = {
     footerHost: "Hosting Estático en",
     verDetalles: "Ver detalles",
     saberMas: "Saber más",
+    verMas: "Ver más ➕",
+    verMenos: "Ver menos ➖",
+    cursosTitle1: "CERTIFICACIONES &",
+    cursosTitle2: "CURSOS",
+    cursosBadge: "🎓 +29 Cursos & Especializaciones",
     skillsTitle: "⚡ Skills & Competencias",
     skillsSubtitle: "Habilidades Blandas & Dominio Técnico",
     coreSkillsTitle: "Competencias de Ingeniería",
     techSkillsTitle: "Nivel Técnico & Herramientas",
     heroesTitle: "⭐ Mis Héroes",
-    heroesSubtitle: "Inspiración & Mentores"
+    heroesSubtitle: "Inspiración & Mentores",
+    eduTitle: "🎓 Educación & Formación Académica",
+    eduSubtitle: "Títulos Académicos & Titulaciones",
+    locationText: "Gran Santiago, Chile",
+    phoneText: "+56 9 67077911"
   },
   en: {
     navExp: "Experience",
+    navCursos: "Courses",
     navProjects: "Projects",
     navHobbies: "Hobbies",
     navStack: "Stack",
@@ -50,14 +79,32 @@ const i18n = {
     btnAboutMe: "About me (Story & Values) ↗",
     expTitle1: "+10 YEARS OF",
     expTitle2: "EXPERIENCE",
+    expTitleMain: "EXPERIENCE",
+    expBadge: "💼 +13 years in finance & IT sector",
+    expStat1Badge: "🏦 Finance & Banking",
+    expStat1Num: "+13",
+    expStat1Unit: "YEARS",
+    expStat1Label: "in Financial Institutions",
+    expStat2Badge: "🚀 Tech Leadership",
+    expStat2Num: "+5",
+    expStat2Unit: "YEARS",
+    expStat2Label: "as Technical Lead",
+    expStat3Badge: "📚 Continuous Learning",
+    expStat3Num: "+29",
+    expStat3Unit: "COURSES",
+    expStat3Label: "Certifications & Tech Courses",
     projTitle1: "FEATURED",
     projTitle2: "PROJECTS",
+    projBadge: "📐 Architectures tailored to each project",
     pasTitle1: "INTERESTS",
     pasTitle2: "& HOBBIES",
+    pasBadge: "💡 A true maker at heart",
     stackTitle1: "TOOLS",
     stackTitle2: "& TECH STACK",
+    stackBadge: "⚡ +15 years in Java",
     contactTitle: "GET IN TOUCH",
     contactSubtitle: "Available for tech project leadership, systems architecture, and software collaboration.",
+    contactBadge: "🤝 Open for technical leadership & collaboration",
     btnEmail: "Send Email ✉️ (administrator@fgonzalez.cl)",
     btnLinkedIn: "LinkedIn ↗",
     btnLinkedInNav: "LinkedIn ↗",
@@ -65,12 +112,20 @@ const i18n = {
     footerHost: "Static Hosting on",
     verDetalles: "View details",
     saberMas: "Learn more",
+    verMas: "Show more ➕",
+    verMenos: "Show less ➖",
+    cursosTitle1: "CERTIFICATIONS &",
+    cursosTitle2: "COURSES",
     skillsTitle: "⚡ Skills & Competencies",
     skillsSubtitle: "Core Engineering & Technical Proficiency",
     coreSkillsTitle: "Engineering Competencies",
     techSkillsTitle: "Technical Level & Tools",
     heroesTitle: "⭐ My Heroes",
-    heroesSubtitle: "Inspiration & Mentors"
+    heroesSubtitle: "Inspiration & Mentors",
+    eduTitle: "🎓 Education & Academic Background",
+    eduSubtitle: "Degrees & Academic Qualifications",
+    locationText: "Santiago, Chile",
+    phoneText: "+56 9 67077911"
   }
 };
 
@@ -78,21 +133,21 @@ const i18n = {
 const aboutMeData = {
   es: {
     id: "sobre-mi-modal",
-    title: "Francisco González • Historia & Valores",
-    company: "Software Engineer & Maker",
-    date: "+10 Años de Trayectoria",
+    title: "Francisco Jesús González Álvarez • Historia & Valores",
+    company: "Líder Técnico & Maker Emprendedor",
+    date: "+10 Años de Experiencia en Software Web",
     image: "assets/heroes/foto_profile.jpg",
-    details: "Hola, soy Francisco González, ingeniero de software y creador. Curioso por naturaleza respecto al conocimiento técnico, con altas habilidades para el aprendizaje autodidacta, empático y colaborador con mis compañeros de equipo.\n\nApasionado por trabajar en equipo, aportando constantemente nuevas ideas alineadas con tecnologías emergentes, patrones de arquitectura limpia y optimización de procesos de programación.",
-    tags: ["Software Engineer", "Auto-Leader", "Maker", "Arquitectura Clean", "Trabajo en Equipo"]
+    details: "¡Hola! Soy Francisco González, un apasionado desarrollador y Líder Técnico con más de 10 años de experiencia en la creación de soluciones de software para la web. Mi enfoque principal es encontrar formas innovadoras de resolver problemas y crear productos excepcionales para mis clientes.\n\nA lo largo de mi carrera, he trabajado con una amplia gama de lenguajes y arquitecturas (Java, Spring Boot, JavaScript, TypeScript, React, Node.js, ColdFusion, PHP, ASP, XML, JSON, SQL y BPMN 2.0 con motores Activiti y JBoss BPM), liderando equipos y modernizando plataformas hacia microservicios y automación DevOps.\n\nMi pasión se basa en la búsqueda constante de nuevos desafíos. Disfruto explorar tendencias tecnológicas de vanguardia como IA Generativa (Amazon Q, Prompt Engineering, AWS Cloud), prototipado y cultura Maker (impresión 3D, C con QMK/ZMK para teclados mecánicos). Me enorgullece crear soluciones robustas, escalables y con un impacto positivo real.",
+    tags: ["Tech Lead", "Senior Software Engineer", "Amazon Q", "Prompt Engineering", "BPMN 2.0", "AWS", "Maker"]
   },
   en: {
     id: "sobre-mi-modal",
-    title: "Francisco González • Story & Values",
-    company: "Software Engineer & Maker",
-    date: "+10 Years of Experience",
+    title: "Francisco Jesús González Álvarez • Story & Values",
+    company: "Technical Lead & Maker Entrepreneur",
+    date: "+10 Years of Web Software Experience",
     image: "assets/heroes/foto_profile.jpg",
-    details: "Hello, I'm Francisco González, a software engineer and maker. Naturally curious about technical knowledge, with strong self-learning skills, empathetic, and supportive with teammates.\n\nPassionate about teamwork, constantly bringing new ideas aligned with emerging technologies, clean architecture patterns, and programming process optimization.",
-    tags: ["Software Engineer", "Auto-Leader", "Maker", "Clean Architecture", "Teamwork"]
+    details: "Hello! I'm Francisco González, a passionate developer and Technical Lead with over 10 years of experience creating web software solutions. My core focus is finding innovative ways to solve complex problems and building exceptional products for clients.\n\nThroughout my career, I have worked with a broad spectrum of tech stacks (Java, Spring Boot, JavaScript, TypeScript, React, Node.js, ColdFusion, PHP, ASP, XML, JSON, SQL, and BPMN 2.0 with Activiti & JBoss BPM engines), leading engineering teams and modernizing platforms into microservices and DevOps automation.\n\nDriven by continuous learning, I explore cutting-edge trends such as Generative AI (Amazon Q, Prompt Engineering, AWS Cloud), rapid prototyping, and a Maker mindset (3D printing, C with QMK/ZMK for custom mechanical keyboards). I pride myself on delivering robust, scalable, and high-impact software.",
+    tags: ["Tech Lead", "Senior Software Engineer", "Amazon Q", "Prompt Engineering", "BPMN 2.0", "AWS", "Maker"]
   }
 };
 
@@ -105,7 +160,7 @@ const coreEngineeringSkills = {
     { icon: "🎯", name: "Atención al detalle" },
     { icon: "🤝", name: "Colaboración con desarrolladores" },
     { icon: "🌱", name: "Aprendizaje autodidacta" },
-    { icon: "🧩", name: "Experiencia en POO" }
+    { icon: "🧩", name: "Experiencia en POO & BPMN" }
   ],
   en: [
     { icon: "💡", name: "Problem-solving skills" },
@@ -114,154 +169,226 @@ const coreEngineeringSkills = {
     { icon: "🎯", name: "Attention to detail" },
     { icon: "🤝", name: "Collaborating with other developers" },
     { icon: "🌱", name: "Self-development skills" },
-    { icon: "🧩", name: "Experience on OOP" }
+    { icon: "🧩", name: "OOP & BPMN Experience" }
   ]
 };
 
 // Technical Skills (Bilingual levels)
 const technicalSkills = {
   es: [
-    { name: "Java", level: "Avanzado", percent: 90 },
-    { name: "Javascript", level: "Intermedio", percent: 75 },
-    { name: "Typescript", level: "Intermedio", percent: 70 },
-    { name: "AngularJS", level: "Intermedio", percent: 65 },
-    { name: "SQL", level: "Intermedio", percent: 75 },
-    { name: "NoSQL", level: "Inicial", percent: 50 },
-    { name: "CSS", level: "Intermedio", percent: 70 },
-    { name: "UML", level: "Intermedio", percent: 75 },
-    { name: "PHP", level: "Intermedio", percent: 75 },
-    { name: "Wordpress", level: "Intermedio", percent: 70 },
-    { name: "Docker", level: "Inicial", percent: 50 },
-    { name: "GNU Bash", level: "Intermedio", percent: 70 },
-    { name: "BPMN (JBPM / Activiti)", level: "Intermedio", percent: 70 },
-    { name: "Git", level: "Intermedio", percent: 80 },
-    { name: "Maven", level: "Intermedio", percent: 80 },
-    { name: "OS (OSX / Linux)", level: "Intermedio", percent: 75 }
+    { name: "Amazon Q & IA Generativa", level: "Avanzado", percent: 92 },
+    { name: "Prompt Engineering", level: "Avanzado", percent: 90 },
+    { name: "AWS Cloud (Lambda, S3, SQS)", level: "Intermedio", percent: 82 },
+    { name: "Java & Spring Boot", level: "Avanzado", percent: 90 },
+    { name: "BPMN 2.0 (Activiti / JBoss)", level: "Avanzado", percent: 85 },
+    { name: "Microservicios & Docker", level: "Intermedio", percent: 80 },
+    { name: "Javascript & Typescript", level: "Intermedio", percent: 80 },
+    { name: "Angular / React", level: "Intermedio", percent: 75 },
+    { name: "SQL & Databases", level: "Avanzado", percent: 85 },
+    { name: "ColdFusion, PHP & ASP", level: "Intermedio", percent: 78 },
+    { name: "Firmware C (QMK / ZMK)", level: "Intermedio", percent: 75 },
+    { name: "Git & CI/CD DevOps", level: "Avanzado", percent: 85 }
   ],
   en: [
-    { name: "Java", level: "Advanced", percent: 90 },
-    { name: "Javascript", level: "Intermediate", percent: 75 },
-    { name: "Typescript", level: "Intermediate", percent: 70 },
-    { name: "AngularJS", level: "Intermediate", percent: 65 },
-    { name: "SQL", level: "Intermediate", percent: 75 },
-    { name: "NoSQL", level: "Novice", percent: 50 },
-    { name: "CSS", level: "Intermediate", percent: 70 },
-    { name: "UML", level: "Intermediate", percent: 75 },
-    { name: "PHP", level: "Intermediate", percent: 75 },
-    { name: "Wordpress", level: "Intermediate", percent: 70 },
-    { name: "Docker", level: "Novice", percent: 50 },
-    { name: "GNU Bash", level: "Intermediate", percent: 70 },
-    { name: "BPMN (JBPM / Activiti)", level: "Intermediate", percent: 70 },
-    { name: "Git", level: "Intermediate", percent: 80 },
-    { name: "Maven", level: "Intermediate", percent: 80 },
-    { name: "OS (OSX / Linux)", level: "Intermediate", percent: 75 }
+    { name: "Amazon Q & Generative AI", level: "Advanced", percent: 92 },
+    { name: "Prompt Engineering", level: "Advanced", percent: 90 },
+    { name: "AWS Cloud (Lambda, S3, SQS)", level: "Intermediate", percent: 82 },
+    { name: "Java & Spring Boot", level: "Advanced", percent: 90 },
+    { name: "BPMN 2.0 (Activiti / JBoss)", level: "Advanced", percent: 85 },
+    { name: "Microservices & Docker", level: "Intermediate", percent: 80 },
+    { name: "Javascript & Typescript", level: "Intermediate", percent: 80 },
+    { name: "Angular / React", level: "Intermediate", percent: 75 },
+    { name: "SQL & Databases", level: "Advanced", percent: 85 },
+    { name: "ColdFusion, PHP & ASP", level: "Intermediate", percent: 78 },
+    { name: "Firmware C (QMK / ZMK)", level: "Intermediate", percent: 75 },
+    { name: "Git & CI/CD DevOps", level: "Advanced", percent: 85 }
   ]
 };
 
-// Experience Data (Bilingual)
+// Experience Data (Bilingual - Full Authentic LinkedIn Career History)
 const experienceData = {
   es: [
     {
-      id: "autoleader-bee",
-      title: "Auto-Leader & Tech Lead",
-      company: "Bee",
-      date: "Reciente / Actualidad",
-      summary: "Liderazgo técnico, arquitectura de soluciones ágiles y gestión de equipos distribuidos.",
-      details: "Desempeño como Auto-Leader coordinando equipos de desarrollo, definiendo estándares de código, arquitectura de sistemas y garantizando entregables de alta calidad en entornos ágiles.",
+      id: "soaint-tech-lead",
+      title: "Technical Lead",
+      company: "SOAINT",
+      date: "Ago 2023 - Presente (3 años 1 mes)",
+      summary: "Líder técnico de la aplicación bancaria de importante institución financiera en Chile.",
+      details: "Líder técnico, encargado de hacer la mejor aplicación bancaria de Chile para importante institución bancaria. Arquitectura de soluciones microservicios, definición de estándares de desarrollo y gestión de equipo técnico.",
+      image: "assets/portfolio/soaint_logo.png",
+      tags: ["Tech Lead", "Microservices", "Java", "Banking", "Remote"]
+    },
+    {
+      id: "zonekeyboards-tpm",
+      title: "Technical Project Manager",
+      company: "ZoneKeyboards",
+      date: "Ene 2021 - Ago 2023 (2 años 8 meses)",
+      summary: "Desarrollo e integración del portal e-commerce de teclados mecánicos custom.",
+      details: "Encargado de mantenimiento, desarrollo e integración del portal de ventas en empresa dedicada a la creación de teclados mecánicos personalizados para el desarrollo de software utilizando tecnologías como React, NodeJS, MongoDB y C (firmware QMK y ZMK).",
+      image: "assets/portfolio/zonekeyboards.png",
+      tags: ["React", "NodeJS", "MongoDB", "QMK/ZMK", "E-Commerce"]
+    },
+    {
+      id: "beemind-tpm",
+      title: "Technical Project Manager",
+      company: "BeeMind",
+      date: "Sep 2015 - Dic 2020 (5 años 4 meses)",
+      summary: "Migración de arquitectura legacy GWT a Microservicios Spring Boot, Angular y DevOps.",
+      details: "Investigación, planificación y desarrollo de migración del Frontend GWT y Backend Java sobre JBossESB a nuevas tecnologías: Frontend con Angular (Metronic) y Backend con Microservicios en Spring Boot (Spring Security, Docker, SSO, API Gateway). Responsable de la automatización de procesos CI/CD DevOps entre entorno de desarrollo y producción.",
       image: "assets/portfolio/autoleader.jpg",
-      tags: ["Tech Lead", "Architecture", "Agile", "Management"]
+      tags: ["Angular", "Spring Boot", "Microservices", "Docker", "DevOps", "SSO"]
     },
     {
-      id: "java-senior-dev",
-      title: "Java Senior Developer",
-      company: "Desarrollo Enterprise",
-      date: "Enterprise Backend",
-      summary: "Desarrollo de aplicaciones backend robustas y de alto rendimiento en Java y Spring Boot.",
-      details: "Diseño e implementación de microservicios, APIs RESTful, optimización de consultas SQL/NoSQL, integración de sistemas heredados y mantenimiento de plataformas empresariales críticas.",
+      id: "beemind-senior-dev",
+      title: "Senior Developer (BPMN 2.0)",
+      company: "BeeMind",
+      date: "Oct 2012 - Ago 2015 (2 años 11 meses)",
+      summary: "Diseño e integración de flujos de trabajo BPMN 2.0 con Activiti BPMN y JBoss BPM.",
+      details: "Desarrollé nuevas funcionalidades de software, diseñando, creando e integrando de forma genérica, paramétrica y flexible flujos de trabajo bajo el estándar BPMN 2.0 con motores como Activiti BPMN y JBoss BPM tanto en frontend como backend.",
+      image: "assets/portfolio/autoleader.jpg",
+      tags: ["BPMN 2.0", "Activiti BPMN", "JBoss BPM", "Java", "Workflow"]
+    },
+    {
+      id: "beemind-java-dev",
+      title: "Java Developer",
+      company: "BeeMind / Banco Penta",
+      date: "Ene 2012 - Sep 2012 (9 meses)",
+      summary: "Desarrollo de interfaces Java GWT para plataforma financiera de Banco Penta.",
+      details: "Desarrollo de interfaces web con Java GWT para nuevo producto perteneciente a Banco Penta. Optimización de rendimiento del sistema y mejora de experiencia de usuario en entorno bancario.",
       image: "assets/portfolio/java_senior.jpg",
-      tags: ["Java", "Spring Boot", "APIs REST", "Backend", "SQL"]
+      tags: ["Java", "GWT", "Linux", "Banco Penta"]
     },
     {
-      id: "coldfusion-dev",
-      title: "ColdFusion Developer",
+      id: "trabajando-coldfusion",
+      title: "Junior ColdFusion Developer",
       company: "Trabajando.com",
-      date: "Portales de Empleo",
-      summary: "Desarrollo y mantenimiento de plataformas web de empleo masivas en ColdFusion.",
-      details: "Mantenimiento y evolución del portal Trabajando.com en tecnología Adobe ColdFusion, optimizando rendimiento de servidor web, bases de datos y experiencia de usuario.",
+      date: "Sep 2011 - Dic 2011 (4 meses)",
+      summary: "Mantenimiento y desarrollo del portal masivo de empleo en Adobe ColdFusion.",
+      details: "Desarrollo y mantenimiento del portal de empleo masivo Trabajando.com utilizando tecnología Adobe ColdFusion, optimizando consultas a SQL Server y disponibilidad de plataforma.",
       image: "assets/portfolio/coldfusion.jpg",
-      tags: ["ColdFusion", "SQL Server", "Trabajando.com", "High Traffic"]
+      tags: ["ColdFusion", "SQL Server", "Trabajando.com", "Alta Concurrencia"]
     },
     {
-      id: "asp-dev",
-      title: "ASP & VBScript Developer",
-      company: "Mira360",
-      date: "Sistemas Web",
-      summary: "Desarrollo web dinámico y aplicaciones a medida en Active Server Pages (ASP).",
-      details: "Implementación de sitios web dinámicos, integración con bases de datos relacionales y mantenimiento de aplicaciones web en servidor Microsoft IIS.",
+      id: "mira360-asp",
+      title: "Junior ASP Web Developer",
+      company: "Mira 360",
+      date: "Abr 2011 - Ago 2011 (5 meses)",
+      summary: "Desarrollo de software de gestión de información en ASP y jQuery para Retail.",
+      details: "Optimización de software de gestión de información para empresas de Retail. Desarrollo de soluciones web con ASP, JavaScript y librerías jQuery.",
       image: "assets/portfolio/asp_mira360.png",
-      tags: ["ASP", "VBScript", "IIS", "Mira360"]
+      tags: ["ASP", "JavaScript", "jQuery", "Retail"]
     },
     {
-      id: "php-junior-dev",
-      title: "PHP Junior Developer",
-      company: "Creear",
-      date: "Desarrollo Web Agency",
-      summary: "Desarrollo web frontend y backend en PHP y MySQL para proyectos digitales.",
-      details: "Creación de sitios dinámicos, maquetación CSS/HTML, scripts backend en PHP y administración de MySQL en la agencia Creear.",
+      id: "creear-php",
+      title: "Desarrollador Practicante (PHP)",
+      company: "Creear Ltda.",
+      date: "Abr 2010 - Sep 2010 (6 meses)",
+      summary: "Desarrollo de portal de administración escolar en PHP y MySQL.",
+      details: "Participación en el diseño e implementación de portal web de administración escolar utilizando PHP y MySQL, sentando las bases de arquitectura web.",
       image: "assets/portfolio/php_creear.png",
-      tags: ["PHP", "MySQL", "HTML5/CSS3", "Creear"]
+      tags: ["PHP", "MySQL", "HTML5", "Educación"]
+    },
+    {
+      id: "colegium-soporte",
+      title: "Soporte Técnico",
+      company: "Colegium S.A.",
+      date: "Ago 2007 - Dic 2007 (5 meses)",
+      summary: "Soporte técnico a clientes, control de calidad QA y desarrollo de informes en 4D.",
+      details: "Mi primera experiencia en el rubro tecnológico. Responsable de brindar soluciones a diversas consultas y problemas planteados por los clientes, además de llevar a cabo actividades de control de calidad en el software de administración escolar y desarrollo de pequeños informes en base de datos 4D.",
+      image: "assets/portfolio/bachelor_degree.jpg",
+      tags: ["Soporte Técnico", "QA Testing", "Reportes 4D", "Educación"]
     }
   ],
   en: [
     {
-      id: "autoleader-bee",
-      title: "Auto-Leader & Tech Lead",
-      company: "Bee",
-      date: "Recent / Present",
-      summary: "Technical leadership, agile solutions architecture, and distributed team management.",
-      details: "Role as Auto-Leader coordinating development teams, defining code standards, systems architecture, and ensuring high-quality deliverables in agile environments.",
+      id: "soaint-tech-lead",
+      title: "Technical Lead",
+      company: "SOAINT",
+      date: "Aug 2023 - Present (3 yrs 1 mo)",
+      summary: "Technical Lead for the top mobile/web banking platform of a major Chilean bank.",
+      details: "Technical Lead in charge of building the best banking application in Chile for a major financial institution. Microservices solutions architecture, code standards definition, and engineering team leadership.",
+      image: "assets/portfolio/soaint_logo.png",
+      tags: ["Tech Lead", "Microservices", "Java", "Banking", "Remote"]
+    },
+    {
+      id: "zonekeyboards-tpm",
+      title: "Technical Project Manager",
+      company: "ZoneKeyboards",
+      date: "Jan 2021 - Aug 2023 (2 yrs 8 mos)",
+      summary: "Development and integration of custom mechanical keyboard e-commerce portal.",
+      details: "Responsible for maintenance, development, and integration of the sales portal for custom mechanical keyboards engineered for developers, using React, NodeJS, MongoDB, and C (QMK & ZMK firmware).",
+      image: "assets/portfolio/zonekeyboards.png",
+      tags: ["React", "NodeJS", "MongoDB", "QMK/ZMK", "E-Commerce"]
+    },
+    {
+      id: "beemind-tpm",
+      title: "Technical Project Manager",
+      company: "BeeMind",
+      date: "Sep 2015 - Dec 2020 (5 yrs 4 mos)",
+      summary: "Migration from legacy GWT architecture to Spring Boot Microservices, Angular, and DevOps.",
+      details: "Research, planning, and execution of system migration from legacy GWT Frontend and Java JBossESB Backend to modern Angular (Metronic) Frontend and Spring Boot Microservices Backend (Spring Security, Docker, SSO, API Gateway). Managed DevOps CI/CD pipeline automation.",
       image: "assets/portfolio/autoleader.jpg",
-      tags: ["Tech Lead", "Architecture", "Agile", "Management"]
+      tags: ["Angular", "Spring Boot", "Microservices", "Docker", "DevOps", "SSO"]
     },
     {
-      id: "java-senior-dev",
-      title: "Java Senior Developer",
-      company: "Enterprise Development",
-      date: "Enterprise Backend",
-      summary: "Development of robust, high-performance backend applications in Java and Spring Boot.",
-      details: "Design and implementation of microservices, RESTful APIs, SQL/NoSQL query optimization, legacy system integration, and maintenance of critical enterprise platforms.",
+      id: "beemind-senior-dev",
+      title: "Senior Developer (BPMN 2.0)",
+      company: "BeeMind",
+      date: "Oct 2012 - Aug 2015 (2 yrs 11 mos)",
+      summary: "BPMN 2.0 workflow design & integration with Activiti BPMN & JBoss BPM.",
+      details: "Developed new software functionality, designing, creating, and integrating generic, parametric, and flexible workflows under the BPMN 2.0 standard using Activiti BPMN and JBoss BPM engines across frontend and backend.",
+      image: "assets/portfolio/autoleader.jpg",
+      tags: ["BPMN 2.0", "Activiti BPMN", "JBoss BPM", "Java", "Workflow"]
+    },
+    {
+      id: "beemind-java-dev",
+      title: "Java Developer",
+      company: "BeeMind / Banco Penta",
+      date: "Jan 2012 - Sep 2012 (9 mos)",
+      summary: "Java GWT web interface development for Banco Penta financial platform.",
+      details: "Web interface development with Java GWT for a new banking product for Banco Penta. System performance optimization and user experience enhancement in a corporate banking environment.",
       image: "assets/portfolio/java_senior.jpg",
-      tags: ["Java", "Spring Boot", "REST APIs", "Backend", "SQL"]
+      tags: ["Java", "GWT", "Linux", "Banco Penta"]
     },
     {
-      id: "coldfusion-dev",
-      title: "ColdFusion Developer",
+      id: "trabajando-coldfusion",
+      title: "Junior ColdFusion Developer",
       company: "Trabajando.com",
-      date: "Job Portals",
-      summary: "Development and maintenance of massive web job portals in ColdFusion.",
-      details: "Maintenance and evolution of Trabajando.com portal built on Adobe ColdFusion technology, optimizing web server performance, databases, and user experience.",
+      date: "Sep 2011 - Dec 2011 (4 mos)",
+      summary: "Maintenance and development of high-traffic job portal in Adobe ColdFusion.",
+      details: "Maintenance and development for Trabajando.com mass job portal built on Adobe ColdFusion, optimizing SQL Server database queries and system reliability.",
       image: "assets/portfolio/coldfusion.jpg",
-      tags: ["ColdFusion", "SQL Server", "Trabajando.com", "High Traffic"]
+      tags: ["ColdFusion", "SQL Server", "Trabajando.com", "High Concurrency"]
     },
     {
-      id: "asp-dev",
-      title: "ASP & VBScript Developer",
-      company: "Mira360",
-      date: "Web Systems",
-      summary: "Dynamic web development and custom applications in Active Server Pages (ASP).",
-      details: "Implementation of dynamic websites, relational database integration, and web application maintenance on Microsoft IIS web servers.",
+      id: "mira360-asp",
+      title: "Junior ASP Web Developer",
+      company: "Mira 360",
+      date: "Apr 2011 - Aug 2011 (5 mos)",
+      summary: "Development of retail information management web software in ASP and jQuery.",
+      details: "Optimization and development of management software for retail enterprises using Active Server Pages (ASP), JavaScript, and jQuery libraries.",
       image: "assets/portfolio/asp_mira360.png",
-      tags: ["ASP", "VBScript", "IIS", "Mira360"]
+      tags: ["ASP", "JavaScript", "jQuery", "Retail"]
     },
     {
-      id: "php-junior-dev",
-      title: "PHP Junior Developer",
-      company: "Creear",
-      date: "Digital Agency",
-      summary: "Frontend and backend web development in PHP and MySQL for digital projects.",
-      details: "Creation of dynamic websites, HTML5/CSS3 layout, PHP backend scripts, and MySQL database management at Creear agency.",
+      id: "creear-php",
+      title: "PHP Developer Intern",
+      company: "Creear Ltda.",
+      date: "Apr 2010 - Sep 2010 (6 mos)",
+      summary: "School management web portal development in PHP and MySQL.",
+      details: "Active involvement in design and implementation of a school management web portal using PHP and MySQL, establishing fundamental web development principles.",
       image: "assets/portfolio/php_creear.png",
-      tags: ["PHP", "MySQL", "HTML5/CSS3", "Creear"]
+      tags: ["PHP", "MySQL", "HTML5", "Education"]
+    },
+    {
+      id: "colegium-soporte",
+      title: "Technical Support Specialist",
+      company: "Colegium S.A.",
+      date: "Aug 2007 - Dec 2007 (5 mos)",
+      summary: "Customer support, QA software testing, and 4D database report creation.",
+      details: "First professional technology experience. Responsible for resolving customer technical inquiries, quality control of school management software, and 4D database report generation.",
+      image: "assets/portfolio/bachelor_degree.jpg",
+      tags: ["Support", "QA Testing", "4D Reports", "Education"]
     }
   ]
 };
@@ -278,6 +405,26 @@ const projectsData = {
       details: "Diseño y desarrollo de la plataforma ZoneKeyboards.cl para entusiastas de teclados custom, catálogo de productos, guías y experiencia de compra optimizada.",
       image: "assets/portfolio/zonekeyboards.png",
       tags: ["E-Commerce", "UI/UX", "Keyboards"]
+    },
+    {
+      id: "isp-torrecontrol",
+      title: "isptorrecontrol.cl",
+      category: "Seguridad / Plataforma Web",
+      icon: "🛡️",
+      summary: "Sistema de gestión y torre de control para operaciones de seguridad privada e ISP.",
+      details: "Desarrollo e implementación del portal de Torre de Control para ISP Seguridad, facilitando la gestión centralizada de accesos, monitoreo operativo y control de turnos en tiempo real.",
+      image: "assets/portfolio/isptorrecontrol.png",
+      tags: ["Seguridad", "Plataforma Web", "Control de Turnos"]
+    },
+    {
+      id: "agendamientos-dap",
+      title: "agendamientosdap.cl",
+      category: "Salud / Sistema de Agendamiento",
+      icon: "🏥",
+      summary: "Plataforma de gestión de citas y agendamiento médico para sucursales de salud y Cesfam.",
+      details: "Plataforma web de agendamiento para sucursales de salud (Cesfam Voullieme y red DAP), optimizando la programación de horas médicas, atención a pacientes e integración para proveedores.",
+      image: "assets/portfolio/agendamientosdap.png",
+      tags: ["Salud", "Agendamiento", "Cesfam", "Web App"]
     },
     {
       id: "rubick-site",
@@ -310,6 +457,26 @@ const projectsData = {
       details: "Design and development of ZoneKeyboards.cl platform for custom keyboard enthusiasts, product catalog, guides, and optimized shopping experience.",
       image: "assets/portfolio/zonekeyboards.png",
       tags: ["E-Commerce", "UI/UX", "Keyboards"]
+    },
+    {
+      id: "isp-torrecontrol",
+      title: "isptorrecontrol.cl",
+      category: "Security / Web Platform",
+      icon: "🛡️",
+      summary: "Control tower management system for private security and ISP operations.",
+      details: "Development and implementation of the Control Tower portal for ISP Security, enabling centralized access management, operational monitoring, and real-time shift control.",
+      image: "assets/portfolio/isptorrecontrol.png",
+      tags: ["Security", "Web Platform", "Shift Control"]
+    },
+    {
+      id: "agendamientos-dap",
+      title: "agendamientosdap.cl",
+      category: "Healthcare / Scheduling System",
+      icon: "🏥",
+      summary: "Medical appointment management and scheduling platform for healthcare branches and Cesfam.",
+      details: "Web scheduling platform for healthcare branches (Cesfam Voullieme and DAP network), optimizing medical appointment booking, patient service, and provider integration.",
+      image: "assets/portfolio/agendamientosdap.png",
+      tags: ["Healthcare", "Scheduling", "Cesfam", "Web App"]
     },
     {
       id: "rubick-site",
@@ -469,42 +636,42 @@ const heroesData = {
       id: "musashi",
       name: "Musashi Miyamoto",
       title: "Estratega & Filósofo Samurai",
-      quote: "You may abandon your own body but you must preserve your honour.",
+      quote: "Puedes abandonar tu propio cuerpo, pero nunca debes abandonar tu honor.",
       image: "assets/heroes/musashi.jpg"
     },
     {
       id: "ada-lovelace",
       name: "Ada Lovelace",
       title: "Matemática & Primera Programadora",
-      quote: "I never am really satisfied that I understand anything; because, understand it well as I may, my comprehension can only be an infinitesimal fraction of all I want to understand...",
+      quote: "Nunca estoy realmente satisfecha de entender algo; porque, por bien que lo entienda, mi comprensión sólo puede ser una fracción infinitesimal de todo lo que quiero entender sobre las conexiones y relaciones que se me ocurren...",
       image: "assets/heroes/ada_lovelace.jpg"
     },
     {
       id: "satoshi-iwata",
       name: "Satoshi Iwata",
       title: "Programador & Ex-Presidente de Nintendo",
-      quote: "I am a corporate president. In my mind, I am a game developer. But in my heart, I am a gamer.",
+      quote: "En mi tarjeta de presentación, soy un presidente corporativo. En mi mente, soy un desarrollador de juegos. Pero en mi corazón, soy un gamer.",
       image: "assets/heroes/satoshi_iwata.jpg"
     },
     {
       id: "steve-wozniak",
       name: "Steve Wozniak",
       title: "Cofundador de Apple & Leyenda Hardware",
-      quote: "Soldering things together, putting the chips together, designing them... it was so much a passion in my life.",
+      quote: "Soldar componentes, ensamblar los chips, diseñarlos, dibujarlos en tableros de diseño... fue una pasión tan grande en mi vida.",
       image: "assets/heroes/steve_wozniak.jpg"
     },
     {
       id: "linus-torvalds",
       name: "Linus Torvalds",
       title: "Creador de Linux Kernel & Git",
-      quote: "Most good programmers do programming not because they expect to get paid, but because it is fun to program.",
+      quote: "La mayoría de los buenos programadores no programan porque esperan recibir un pago o la adulación del público, sino porque es divertido programar.",
       image: "assets/heroes/linus_torvalds.jpg"
     },
     {
       id: "federico-faggin",
       name: "Federico Faggin",
       title: "Físico & Co-inventor del Intel 4004",
-      quote: "Those work can be done easily, if you are doing that repeatedly.",
+      quote: "La creatividad, la ética, el libre albedrío y el amor gozoso sólo pueden provenir de la conciencia.",
       image: "assets/heroes/federico_faggin.jpg"
     }
   ],
@@ -548,7 +715,7 @@ const heroesData = {
       id: "federico-faggin",
       name: "Federico Faggin",
       title: "Physicist & Co-inventor of Intel 4004",
-      quote: "Those work can be done easily, if you are doing that repeatedly.",
+      quote: "Creativity, ethics, free will, and joyful love can only come from consciousness.",
       image: "assets/heroes/federico_faggin.jpg"
     }
   ]
@@ -578,12 +745,499 @@ const toolsData = {
   ]
 };
 
+// Courses & Certifications Data (Bilingual - from LinkedIn)
+const coursesData = {
+  es: [
+    {
+      id: "amazon-q-dev-assessment",
+      title: "Amazon Q Developer Fundamentals Knowledge Badge Assessment",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🏆",
+      tags: ["AWS", "Amazon Q", "IA", "Badge"]
+    },
+    {
+      id: "amazon-q-soft-dev",
+      title: "Software Development with Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "💻",
+      tags: ["AWS", "Amazon Q", "Prompt Engineering", "IA"]
+    },
+    {
+      id: "amazon-q-setup",
+      title: "Setup Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "⚙️",
+      tags: ["AWS", "Amazon Q", "DevOps", "IA"]
+    },
+    {
+      id: "amazon-q-prompt-eng",
+      title: "Prompt Engineering with Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🤖",
+      tags: ["AWS", "Amazon Q", "Prompt Engineering", "IA"]
+    },
+    {
+      id: "amazon-q-ops",
+      title: "Managing Operations on AWS with Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "☁️",
+      tags: ["AWS", "Amazon Q", "Cloud", "Operations"]
+    },
+    {
+      id: "amazon-q-gitlab",
+      title: "GitLab Duo with Amazon Q",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🦊",
+      tags: ["AWS", "GitLab", "Amazon Q", "CI/CD"]
+    },
+    {
+      id: "amazon-q-customization",
+      title: "Customization in Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🛠️",
+      tags: ["AWS", "Amazon Q", "Customization", "IA"]
+    },
+    {
+      id: "amazon-q-cli",
+      title: "Amazon Q Developer Command Line Interface (CLI)",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🖥️",
+      tags: ["AWS", "Amazon Q", "CLI", "Terminal"]
+    },
+    {
+      id: "apiux-ia-academy",
+      title: "Curso IA Academy",
+      issuer: "Apiux Tech",
+      date: "Feb 2026",
+      icon: "🧠",
+      tags: ["Apiux", "IA", "Prompt Engineering", "Academy"]
+    },
+    {
+      id: "aws-lambda",
+      title: "Introduction to AWS Lambda",
+      issuer: "Coursera",
+      date: "Jul 2024",
+      icon: "🏗️",
+      tags: ["AWS", "Cloud", "Serverless", "Lambda"]
+    },
+    {
+      id: "aws-s3-cost",
+      title: "AWS PartnerCast - Cost Optimization Guidelines for Amazon S3",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Abr 2024",
+      icon: "☁️",
+      tags: ["AWS", "S3", "Cloud", "Cost Optimization"]
+    },
+    {
+      id: "aws-sqs",
+      title: "Introduction to Amazon Simple Queue Service (SQS)",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2024",
+      icon: "📨",
+      tags: ["AWS", "SQS", "Cloud", "Queues"]
+    },
+    {
+      id: "aws-cloudwatch",
+      title: "Basic of Amazon Cloudwatch (AWS Partner-led Support)",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2024",
+      icon: "📈",
+      tags: ["AWS", "CloudWatch", "Cloud", "Monitoring"]
+    },
+    {
+      id: "aws-sns",
+      title: "Amazon Simple Notification Service (SNS) - Troubleshooting",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Feb 2024",
+      icon: "🔔",
+      tags: ["AWS", "SNS", "Cloud", "Messaging"]
+    },
+    {
+      id: "prompt-engineering",
+      title: "Curso de Prompt Engineering con ChatGPT",
+      issuer: "Platzi",
+      date: "Sep 2023",
+      icon: "🤖",
+      tags: ["IA", "Prompt Engineering", "ChatGPT", "LLM"]
+    },
+    {
+      id: "java-spring-security",
+      title: "Curso de Java Spring Security: Autenticación y Seguridad Web",
+      issuer: "Platzi",
+      date: "Ago 2023",
+      icon: "🔐",
+      tags: ["Java", "Spring Security", "Auth", "Backend"]
+    },
+    {
+      id: "terminal-cli",
+      title: "Curso de Introducción a la Terminal y Línea de Comandos",
+      issuer: "Platzi",
+      date: "Ago 2023",
+      icon: "🖥️",
+      tags: ["CLI", "Terminal", "Linux", "Bash"]
+    },
+    {
+      id: "regex",
+      title: "Curso de Expresiones Regulares",
+      issuer: "Platzi",
+      date: "Ago 2023",
+      icon: "🧮",
+      tags: ["Regex", "Programación", "Backend"]
+    },
+    {
+      id: "jenkins",
+      title: "Curso Básico de Jenkins",
+      issuer: "Platzi",
+      date: "Ago 2023",
+      icon: "⚙️",
+      tags: ["Jenkins", "CI/CD", "DevOps"]
+    },
+    {
+      id: "java-testing",
+      title: "Curso Básico de Testing en Java",
+      issuer: "Platzi",
+      date: "Mar 2021",
+      icon: "✅",
+      tags: ["Java", "Testing", "JUnit", "Backend"]
+    },
+    {
+      id: "java-spring",
+      title: "Curso de Java Spring",
+      issuer: "Platzi",
+      date: "Mar 2021",
+      icon: "🌱",
+      tags: ["Java", "Spring Framework", "Backend"]
+    },
+    {
+      id: "postgresql",
+      title: "Curso de PostgreSQL",
+      issuer: "Platzi",
+      date: "Mar 2021",
+      icon: "🐘",
+      tags: ["PostgreSQL", "SQL", "Bases de Datos"]
+    },
+    {
+      id: "java-persistence",
+      title: "Curso de Java SE Persistencia de Datos",
+      issuer: "Platzi",
+      date: "Feb 2021",
+      icon: "💾",
+      tags: ["Java", "JPA", "Hibernate", "Bases de Datos"]
+    },
+    {
+      id: "sql-mysql",
+      title: "Curso Práctico de SQL y MySQL",
+      issuer: "Platzi",
+      date: "Feb 2021",
+      icon: "🗄️",
+      tags: ["SQL", "MySQL", "Bases de Datos"]
+    },
+    {
+      id: "java-oop",
+      title: "Curso de Java SE Orientado a Objetos",
+      issuer: "Platzi",
+      date: "Nov 2020",
+      icon: "🧩",
+      tags: ["Java", "POO", "Programación"]
+    },
+    {
+      id: "java-english",
+      title: "Curso de Inglés Básico A1: Conversaciones Cortas y Habituales",
+      issuer: "Platzi",
+      date: "Nov 2020",
+      icon: "🇬🇧",
+      tags: ["Inglés", "Idioma", "A1"]
+    },
+    {
+      id: "git-github",
+      title: "Curso Profesional de Git y GitHub",
+      issuer: "Platzi",
+      date: "Oct 2020",
+      icon: "🐙",
+      tags: ["Git", "GitHub", "Control de Versiones"]
+    },
+    {
+      id: "tech-gerentes",
+      title: "Curso de Tecnología para Gerentes y Directores",
+      issuer: "Platzi",
+      date: "Oct 2020",
+      icon: "📊",
+      tags: ["Management", "Tecnología", "Liderazgo"]
+    },
+    {
+      id: "arduino-electronics",
+      title: "Electrones en Acción: Electrónica y Arduinos para tus propios Inventos",
+      issuer: "Coursera",
+      date: "Dic 2015",
+      icon: "🤖",
+      tags: ["Arduino", "Electrónica", "Hardware", "C"]
+    }
+  ],
+  en: [
+    {
+      id: "amazon-q-dev-assessment",
+      title: "Amazon Q Developer Fundamentals Knowledge Badge Assessment",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🏆",
+      tags: ["AWS", "Amazon Q", "AI", "Badge"]
+    },
+    {
+      id: "amazon-q-soft-dev",
+      title: "Software Development with Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "💻",
+      tags: ["AWS", "Amazon Q", "Prompt Engineering", "AI"]
+    },
+    {
+      id: "amazon-q-setup",
+      title: "Setup Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "⚙️",
+      tags: ["AWS", "Amazon Q", "DevOps", "AI"]
+    },
+    {
+      id: "amazon-q-prompt-eng",
+      title: "Prompt Engineering with Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🤖",
+      tags: ["AWS", "Amazon Q", "Prompt Engineering", "AI"]
+    },
+    {
+      id: "amazon-q-ops",
+      title: "Managing Operations on AWS with Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "☁️",
+      tags: ["AWS", "Amazon Q", "Cloud", "Operations"]
+    },
+    {
+      id: "amazon-q-gitlab",
+      title: "GitLab Duo with Amazon Q",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🦊",
+      tags: ["AWS", "GitLab", "Amazon Q", "CI/CD"]
+    },
+    {
+      id: "amazon-q-customization",
+      title: "Customization in Amazon Q Developer",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🛠️",
+      tags: ["AWS", "Amazon Q", "Customization", "AI"]
+    },
+    {
+      id: "amazon-q-cli",
+      title: "Amazon Q Developer Command Line Interface (CLI)",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2026",
+      icon: "🖥️",
+      tags: ["AWS", "Amazon Q", "CLI", "Terminal"]
+    },
+    {
+      id: "apiux-ia-academy",
+      title: "AI Academy Course",
+      issuer: "Apiux Tech",
+      date: "Feb 2026",
+      icon: "🧠",
+      tags: ["Apiux", "AI", "Prompt Engineering", "Academy"]
+    },
+    {
+      id: "aws-lambda",
+      title: "Introduction to AWS Lambda",
+      issuer: "Coursera",
+      date: "Jul 2024",
+      icon: "🏗️",
+      tags: ["AWS", "Cloud", "Serverless", "Lambda"]
+    },
+    {
+      id: "aws-s3-cost",
+      title: "AWS PartnerCast - Cost Optimization Guidelines for Amazon S3",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Apr 2024",
+      icon: "☁️",
+      tags: ["AWS", "S3", "Cloud", "Cost Optimization"]
+    },
+    {
+      id: "aws-sqs",
+      title: "Introduction to Amazon Simple Queue Service (SQS)",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2024",
+      icon: "📨",
+      tags: ["AWS", "SQS", "Cloud", "Queues"]
+    },
+    {
+      id: "aws-cloudwatch",
+      title: "Basic of Amazon Cloudwatch (AWS Partner-led Support)",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Mar 2024",
+      icon: "📈",
+      tags: ["AWS", "CloudWatch", "Cloud", "Monitoring"]
+    },
+    {
+      id: "aws-sns",
+      title: "Amazon Simple Notification Service (SNS) - Troubleshooting",
+      issuer: "Amazon Web Services (AWS)",
+      date: "Feb 2024",
+      icon: "🔔",
+      tags: ["AWS", "SNS", "Cloud", "Messaging"]
+    },
+    {
+      id: "prompt-engineering",
+      title: "Prompt Engineering with ChatGPT Course",
+      issuer: "Platzi",
+      date: "Sep 2023",
+      icon: "🤖",
+      tags: ["AI", "Prompt Engineering", "ChatGPT", "LLM"]
+    },
+    {
+      id: "java-spring-security",
+      title: "Java Spring Security: Authentication & Web Security",
+      issuer: "Platzi",
+      date: "Aug 2023",
+      icon: "🔐",
+      tags: ["Java", "Spring Security", "Auth", "Backend"]
+    },
+    {
+      id: "terminal-cli",
+      title: "Introduction to Terminal & Command Line",
+      issuer: "Platzi",
+      date: "Aug 2023",
+      icon: "🖥️",
+      tags: ["CLI", "Terminal", "Linux", "Bash"]
+    },
+    {
+      id: "regex",
+      title: "Regular Expressions Course",
+      issuer: "Platzi",
+      date: "Aug 2023",
+      icon: "🧮",
+      tags: ["Regex", "Programming", "Backend"]
+    },
+    {
+      id: "jenkins",
+      title: "Jenkins Fundamentals",
+      issuer: "Platzi",
+      date: "Aug 2023",
+      icon: "⚙️",
+      tags: ["Jenkins", "CI/CD", "DevOps"]
+    },
+    {
+      id: "java-testing",
+      title: "Java Testing Fundamentals",
+      issuer: "Platzi",
+      date: "Mar 2021",
+      icon: "✅",
+      tags: ["Java", "Testing", "JUnit", "Backend"]
+    },
+    {
+      id: "java-spring",
+      title: "Java Spring Framework",
+      issuer: "Platzi",
+      date: "Mar 2021",
+      icon: "🌱",
+      tags: ["Java", "Spring Framework", "Backend"]
+    },
+    {
+      id: "postgresql",
+      title: "PostgreSQL Course",
+      issuer: "Platzi",
+      date: "Mar 2021",
+      icon: "🐘",
+      tags: ["PostgreSQL", "SQL", "Databases"]
+    },
+    {
+      id: "java-persistence",
+      title: "Java SE Data Persistence",
+      issuer: "Platzi",
+      date: "Feb 2021",
+      icon: "💾",
+      tags: ["Java", "JPA", "Hibernate", "Databases"]
+    },
+    {
+      id: "sql-mysql",
+      title: "Practical SQL & MySQL",
+      issuer: "Platzi",
+      date: "Feb 2021",
+      icon: "🗄️",
+      tags: ["SQL", "MySQL", "Databases"]
+    },
+    {
+      id: "java-oop",
+      title: "Java SE Object-Oriented Programming",
+      issuer: "Platzi",
+      date: "Nov 2020",
+      icon: "🧩",
+      tags: ["Java", "OOP", "Programming"]
+    },
+    {
+      id: "java-english",
+      title: "Basic English A1: Short & Everyday Conversations",
+      issuer: "Platzi",
+      date: "Nov 2020",
+      icon: "🇬🇧",
+      tags: ["English", "Language", "A1"]
+    },
+    {
+      id: "git-github",
+      title: "Professional Git & GitHub",
+      issuer: "Platzi",
+      date: "Oct 2020",
+      icon: "🐙",
+      tags: ["Git", "GitHub", "Version Control"]
+    },
+    {
+      id: "tech-gerentes",
+      title: "Technology for Managers & Directors",
+      issuer: "Platzi",
+      date: "Oct 2020",
+      icon: "📊",
+      tags: ["Management", "Technology", "Leadership"]
+    },
+    {
+      id: "arduino-electronics",
+      title: "Electrons in Action: Electronics & Arduinos for Your Own Inventions",
+      issuer: "Coursera",
+      date: "Dec 2015",
+      icon: "🤖",
+      tags: ["Arduino", "Electronics", "Hardware", "C"]
+    }
+  ]
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("detailsModal");
   const modalClose = document.getElementById("modalClose");
 
   // Track currently active modal item if open
   let activeModalItem = null;
+
+  // Section Expansion State & Initial Item Limits
+  const sectionExpanded = {
+    exp: false,
+    courses: false,
+    proj: false,
+    pas: false
+  };
+
+  const sectionLimits = {
+    exp: 3,       // 3 most recent jobs initially
+    courses: 6,   // 6 most recent courses/certs initially
+    proj: 2,      // 2 projects initially
+    pas: 2        // 2 hobbies/interests initially
+  };
 
   // Function to apply UI translations to static HTML elements
   function updateStaticTranslations() {
@@ -617,9 +1271,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const dict = i18n[currentLang];
 
     // Render Experience List
+    const expAll = experienceData[currentLang];
+    const expVisible = sectionExpanded.exp ? expAll : expAll.slice(0, sectionLimits.exp);
     const experienceContainer = document.getElementById("experienceList");
     if (experienceContainer) {
-      experienceContainer.innerHTML = experienceData[currentLang].map(exp => `
+      experienceContainer.innerHTML = expVisible.map(exp => `
         <div class="experience-card btn-exp-modal" data-id="${exp.id}">
           <img src="${exp.image}" alt="${exp.title}" class="exp-thumb-box" loading="lazy">
           <div class="exp-main">
@@ -635,10 +1291,75 @@ document.addEventListener("DOMContentLoaded", () => {
       `).join('');
     }
 
+    const wrapExp = document.getElementById("wrapMoreExp");
+    const txtExp = document.getElementById("txtMoreExp");
+    if (wrapExp && txtExp) {
+      if (expAll.length > sectionLimits.exp) {
+        wrapExp.style.display = "flex";
+        const rem = expAll.length - sectionLimits.exp;
+        txtExp.innerText = sectionExpanded.exp ? dict.verMenos : `${dict.verMas} (${rem})`;
+      } else {
+        wrapExp.style.display = "none";
+      }
+    }
+
+    // Helper to convert date string (e.g. "Jul 2024", "Mar 2021", "2024") into a numeric score for sorting
+    function parseDateToScore(dateStr) {
+      if (!dateStr) return 0;
+      const parts = dateStr.trim().split(/\s+/);
+      if (parts.length === 1) {
+        const yr = parseInt(parts[0], 10);
+        return isNaN(yr) ? 0 : yr * 100;
+      }
+      const months = {
+        ene: 1, jan: 1, feb: 2, mar: 3, abr: 4, apr: 4,
+        may: 5, jun: 6, jul: 7, ago: 8, aug: 8, sep: 9,
+        oct: 10, nov: 11, dic: 12, dec: 12
+      };
+      const mKey = parts[0].toLowerCase().substring(0, 3);
+      const month = months[mKey] || 1;
+      const yr = parseInt(parts[1], 10) || 0;
+      return yr * 100 + month;
+    }
+
+    // Render Courses & Certifications Grid (sorted newest first)
+    const coursesAll = [...coursesData[currentLang]].sort((a, b) => parseDateToScore(b.date) - parseDateToScore(a.date));
+    const coursesVisible = sectionExpanded.courses ? coursesAll : coursesAll.slice(0, sectionLimits.courses);
+    const coursesContainer = document.getElementById("coursesGrid");
+    if (coursesContainer) {
+      coursesContainer.innerHTML = coursesVisible.map(course => `
+        <div class="course-card-sawad">
+          <div class="course-top">
+            <div class="course-icon-badge">${course.icon}</div>
+            <span class="course-issuer">${course.issuer}</span>
+          </div>
+          <div class="course-title">${course.title}</div>
+          <div class="course-meta">${course.date}</div>
+          <div style="display:flex; gap:0.35rem; flex-wrap:wrap; margin-top:auto;">
+            ${course.tags.map(t => `<span class="tag-pill" style="font-size:0.72rem; padding:0.2rem 0.55rem;">${t}</span>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const wrapCourses = document.getElementById("wrapMoreCourses");
+    const txtCourses = document.getElementById("txtMoreCourses");
+    if (wrapCourses && txtCourses) {
+      if (coursesAll.length > sectionLimits.courses) {
+        wrapCourses.style.display = "flex";
+        const rem = coursesAll.length - sectionLimits.courses;
+        txtCourses.innerText = sectionExpanded.courses ? dict.verMenos : `${dict.verMas} (${rem})`;
+      } else {
+        wrapCourses.style.display = "none";
+      }
+    }
+
     // Render Projects Grid
+    const projAll = projectsData[currentLang];
+    const projVisible = sectionExpanded.proj ? projAll : projAll.slice(0, sectionLimits.proj);
     const projectsContainer = document.getElementById("projectsGrid");
     if (projectsContainer) {
-      projectsContainer.innerHTML = projectsData[currentLang].map(proj => `
+      projectsContainer.innerHTML = projVisible.map(proj => `
         <div class="project-card-sawad btn-proj-modal" data-id="${proj.id}">
           <div>
             <img src="${proj.image}" alt="${proj.title}" class="card-img-thumb" loading="lazy">
@@ -657,10 +1378,24 @@ document.addEventListener("DOMContentLoaded", () => {
       `).join('');
     }
 
+    const wrapProj = document.getElementById("wrapMoreProjects");
+    const txtProj = document.getElementById("txtMoreProjects");
+    if (wrapProj && txtProj) {
+      if (projAll.length > sectionLimits.proj) {
+        wrapProj.style.display = "flex";
+        const rem = projAll.length - sectionLimits.proj;
+        txtProj.innerText = sectionExpanded.proj ? dict.verMenos : `${dict.verMas} (${rem})`;
+      } else {
+        wrapProj.style.display = "none";
+      }
+    }
+
     // Render Passions Grid
+    const pasAll = passionsData[currentLang];
+    const pasVisible = sectionExpanded.pas ? pasAll : pasAll.slice(0, sectionLimits.pas);
     const passionsContainer = document.getElementById("passionsGrid");
     if (passionsContainer) {
-      passionsContainer.innerHTML = passionsData[currentLang].map(pas => `
+      passionsContainer.innerHTML = pasVisible.map(pas => `
         <div class="project-card-sawad btn-pas-modal" data-id="${pas.id}">
           <div>
             <img src="${pas.image}" alt="${pas.title}" class="card-img-thumb" loading="lazy">
@@ -677,6 +1412,18 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `).join('');
+    }
+
+    const wrapPas = document.getElementById("wrapMorePassions");
+    const txtPas = document.getElementById("txtMorePassions");
+    if (wrapPas && txtPas) {
+      if (pasAll.length > sectionLimits.pas) {
+        wrapPas.style.display = "flex";
+        const rem = pasAll.length - sectionLimits.pas;
+        txtPas.innerText = sectionExpanded.pas ? dict.verMenos : `${dict.verMas} (${rem})`;
+      } else {
+        wrapPas.style.display = "none";
+      }
     }
 
     // Render Tools Grid
@@ -890,6 +1637,46 @@ document.addEventListener("DOMContentLoaded", () => {
       activeModalItem = null;
     }
   });
+
+  // Show More / Show Less Event Handlers
+  document.getElementById("btnMoreExp")?.addEventListener("click", () => {
+    sectionExpanded.exp = !sectionExpanded.exp;
+    renderAllSections();
+  });
+
+  document.getElementById("btnMoreCourses")?.addEventListener("click", () => {
+    sectionExpanded.courses = !sectionExpanded.courses;
+    renderAllSections();
+  });
+
+  document.getElementById("btnMoreProjects")?.addEventListener("click", () => {
+    sectionExpanded.proj = !sectionExpanded.proj;
+    renderAllSections();
+  });
+
+  document.getElementById("btnMorePassions")?.addEventListener("click", () => {
+    sectionExpanded.pas = !sectionExpanded.pas;
+    renderAllSections();
+  });
+
+  // Floating Back to Top Button Event Handlers
+  const btnScrollTop = document.getElementById("btnScrollTop");
+  if (btnScrollTop) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.classList.add("visible");
+      } else {
+        btnScrollTop.classList.remove("visible");
+      }
+    }, { passive: true });
+
+    btnScrollTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
 
   // Initialize Portfolio with default/persisted language
   updateStaticTranslations();
