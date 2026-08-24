@@ -63,10 +63,14 @@ const i18n = {
     techSkillsTitle: "Nivel Técnico & Herramientas",
     heroesTitle: "⭐ Mis Héroes",
     heroesSubtitle: "Inspiración & Mentores",
+    emailModalTitle: "Contactar por Email",
+    emailModalSubtitle: "¿Cómo prefieres continuar? Puedes copiar la dirección de correo al portapapeles o abrir tu cliente de correo predeterminado.",
+    btnCopyEmailTxt: "Copiar Correo (administrator@fgonzalez.cl)",
+    btnOpenMailtoTxt: "Enviar con aplicación por defecto (mailto)",
+    toastEmailCopiedTxt: "¡Correo administrator@fgonzalez.cl copiado al portapapeles! 📋",
     eduTitle: "🎓 Educación & Formación Académica",
     eduSubtitle: "Títulos Académicos & Titulaciones",
-    locationText: "Gran Santiago, Chile",
-    phoneText: "+56 9 67077911"
+    locationText: "Gran Santiago, Chile"
   },
   en: {
     navExp: "Experience",
@@ -122,10 +126,14 @@ const i18n = {
     techSkillsTitle: "Technical Level & Tools",
     heroesTitle: "⭐ My Heroes",
     heroesSubtitle: "Inspiration & Mentors",
+    emailModalTitle: "Contact via Email",
+    emailModalSubtitle: "How would you like to proceed? You can copy the email address to your clipboard or open your default mail application.",
+    btnCopyEmailTxt: "Copy Email (administrator@fgonzalez.cl)",
+    btnOpenMailtoTxt: "Send via default mail app (mailto)",
+    toastEmailCopiedTxt: "Email administrator@fgonzalez.cl copied to clipboard! 📋",
     eduTitle: "🎓 Education & Academic Background",
     eduSubtitle: "Degrees & Academic Qualifications",
-    locationText: "Santiago, Chile",
-    phoneText: "+56 9 67077911"
+    locationText: "Santiago, Chile"
   }
 };
 
@@ -409,22 +417,22 @@ const projectsData = {
     {
       id: "isp-torrecontrol",
       title: "isptorrecontrol.cl",
-      category: "Seguridad / Plataforma Web",
+      category: "Gestión de Eventos & Accesos",
       icon: "🛡️",
-      summary: "Sistema de gestión y torre de control para operaciones de seguridad privada e ISP.",
-      details: "Desarrollo e implementación del portal de Torre de Control para ISP Seguridad, facilitando la gestión centralizada de accesos, monitoreo operativo y control de turnos en tiempo real.",
+      summary: "Plataforma integral de gestión de eventos, control de acceso de proveedores e identificación de personas.",
+      details: "Sistema especializado de Torre de Control para operaciones de seguridad privada. Permite la gestión centralizada de eventos, acreditación y control de acceso de proveedores en tiempo real, registro operativo e identificación de personas.",
       image: "assets/portfolio/isptorrecontrol.png",
-      tags: ["Seguridad", "Plataforma Web", "Control de Turnos"]
+      tags: ["Gestión de Eventos", "Acceso Proveedores", "Identificación ID", "Seguridad"]
     },
     {
       id: "agendamientos-dap",
       title: "agendamientosdap.cl",
-      category: "Salud / Sistema de Agendamiento",
-      icon: "🏥",
-      summary: "Plataforma de gestión de citas y agendamiento médico para sucursales de salud y Cesfam.",
-      details: "Plataforma web de agendamiento para sucursales de salud (Cesfam Voullieme y red DAP), optimizando la programación de horas médicas, atención a pacientes e integración para proveedores.",
+      category: "Agendamiento de Proveedores",
+      icon: "🏢",
+      summary: "Plataforma de agendamiento de citas y gestión de proveedores para oficinas de DAP (Dirección de Atención Primaria).",
+      details: "Sistema web de coordinación y agendamiento para proveedores de la red de oficinas de DAP (Dirección de Atención Primaria). Optimiza la programación de visitas corporativas, control de horarios de atención, gestión de turnos e integración administrativa.",
       image: "assets/portfolio/agendamientosdap.png",
-      tags: ["Salud", "Agendamiento", "Cesfam", "Web App"]
+      tags: ["Agendamiento", "Proveedores", "DAP Atención Primaria", "Web App"]
     },
     {
       id: "rubick-site",
@@ -461,22 +469,22 @@ const projectsData = {
     {
       id: "isp-torrecontrol",
       title: "isptorrecontrol.cl",
-      category: "Security / Web Platform",
+      category: "Event & Access Management",
       icon: "🛡️",
-      summary: "Control tower management system for private security and ISP operations.",
-      details: "Development and implementation of the Control Tower portal for ISP Security, enabling centralized access management, operational monitoring, and real-time shift control.",
+      summary: "Comprehensive platform for event management, vendor access control, and identity verification.",
+      details: "Specialized Control Tower system for private security operations. Enables centralized event management, real-time vendor access accreditation, operational logs, and identity verification.",
       image: "assets/portfolio/isptorrecontrol.png",
-      tags: ["Security", "Web Platform", "Shift Control"]
+      tags: ["Event Management", "Vendor Access", "ID Verification", "Security"]
     },
     {
       id: "agendamientos-dap",
       title: "agendamientosdap.cl",
-      category: "Healthcare / Scheduling System",
-      icon: "🏥",
-      summary: "Medical appointment management and scheduling platform for healthcare branches and Cesfam.",
-      details: "Web scheduling platform for healthcare branches (Cesfam Voullieme and DAP network), optimizing medical appointment booking, patient service, and provider integration.",
+      category: "Vendor Scheduling System",
+      icon: "🏢",
+      summary: "Appointment scheduling and vendor management platform for DAP (Primary Healthcare Directorate) offices.",
+      details: "Web platform for vendor appointment coordination and scheduling tailored for the DAP (Dirección de Atención Primaria) office network. Streamlines corporate visit bookings, service hours control, shift management, and administrative integration.",
       image: "assets/portfolio/agendamientosdap.png",
-      tags: ["Healthcare", "Scheduling", "Cesfam", "Web App"]
+      tags: ["Scheduling", "Vendor Management", "DAP Healthcare", "Web App"]
     },
     {
       id: "rubick-site",
@@ -724,24 +732,24 @@ const heroesData = {
 // Tools Data (Bilingual)
 const toolsData = {
   es: [
-    { name: "Java Enterprise", role: "Backend & Microservicios", icon: "☕" },
-    { name: "ColdFusion", role: "Adobe Web Application Server", icon: "⚡" },
-    { name: "PHP & MySQL", role: "Desarrollo Web Backend", icon: "🐘" },
-    { name: "JavaScript & HTML5", role: "Frontend Interactivo", icon: "🌐" },
-    { name: "Impresión & Modelado 3D", role: "Prototipado CAD & Maker", icon: "🖨️" },
-    { name: "Astronomía & Óptica", role: "Telescopio Reflector 1200/160", icon: "🔭" },
-    { name: "GitHub Pages", role: "Despliegue & Hosting Estático", icon: "🚀" },
-    { name: "SQL & Databases", role: "SQL Server & Relacionales", icon: "💾" }
+    { name: "Amazon Q & AWS Cloud", role: "IA Generativa, Lambda, S3, SQS & CLI", icon: "🤖" },
+    { name: "Java Enterprise & Spring", role: "Backend Microservicios", icon: "☕" },
+    { name: "BPMN 2.0 Workflows", role: "Activiti BPMN & JBoss BPM", icon: "🔄" },
+    { name: "Prompt Engineering", role: "Desarrollo con LLMs & Amazon Q", icon: "⚡" },
+    { name: "JavaScript & TypeScript", role: "Angular, React & Frontend", icon: "🌐" },
+    { name: "ColdFusion, PHP & ASP", role: "Desarrollo Web Full Stack", icon: "🐘" },
+    { name: "Impresión 3D & QMK/ZMK", role: "Maker, CAD & Firmware C", icon: "🖨️" },
+    { name: "SQL & Relacionales", role: "SQL Server, MySQL & DBs", icon: "💾" }
   ],
   en: [
-    { name: "Java Enterprise", role: "Backend & Microservices", icon: "☕" },
-    { name: "ColdFusion", role: "Adobe Web Application Server", icon: "⚡" },
-    { name: "PHP & MySQL", role: "Backend Web Development", icon: "🐘" },
-    { name: "JavaScript & HTML5", role: "Interactive Frontend", icon: "🌐" },
-    { name: "3D Printing & Modeling", role: "CAD Prototyping & Maker", icon: "🖨️" },
-    { name: "Astronomy & Optics", role: "1200/160 Reflector Telescope", icon: "🔭" },
-    { name: "GitHub Pages", role: "Static Deployment & Hosting", icon: "🚀" },
-    { name: "SQL & Databases", role: "SQL Server & Relational DBs", icon: "💾" }
+    { name: "Amazon Q & AWS Cloud", role: "Generative AI, Lambda, S3, SQS & CLI", icon: "🤖" },
+    { name: "Java Enterprise & Spring", role: "Microservices Backend", icon: "☕" },
+    { name: "BPMN 2.0 Workflows", role: "Activiti BPMN & JBoss BPM", icon: "🔄" },
+    { name: "Prompt Engineering", role: "Development with LLMs & Amazon Q", icon: "⚡" },
+    { name: "JavaScript & TypeScript", role: "Angular, React & Frontend", icon: "🌐" },
+    { name: "ColdFusion, PHP & ASP", role: "Full Stack Web Development", icon: "🐘" },
+    { name: "3D Printing & QMK/ZMK", role: "Maker, CAD & C Firmware", icon: "🖨️" },
+    { name: "SQL & Relational DBs", role: "SQL Server, MySQL & DBs", icon: "💾" }
   ]
 };
 
@@ -1234,9 +1242,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sectionLimits = {
     exp: 3,       // 3 most recent jobs initially
-    courses: 6,   // 6 most recent courses/certs initially
-    proj: 2,      // 2 projects initially
-    pas: 2        // 2 hobbies/interests initially
+    courses: 3,   // 3 items initially (1st row)
+    proj: 3,      // 3 items initially (1st row)
+    pas: 3        // 3 items initially (1st row)
   };
 
   // Function to apply UI translations to static HTML elements
@@ -1512,7 +1520,40 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
 
-          <!-- Section 2: My Heroes -->
+          <!-- Section 2: Education & Academic Background -->
+          <div style="margin-top: 2.25rem; padding-top: 1.75rem; border-top: 1px solid var(--border-dark);">
+            <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--text-white); margin-bottom: 0.2rem;">
+              ${dict.eduTitle}
+            </h4>
+            <div style="font-size: 0.85rem; color: var(--accent-orange); font-weight: 600; margin-bottom: 1.25rem;">
+              ${dict.eduSubtitle}
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
+              <div style="background: var(--bg-dark-secondary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-dark);">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem;">
+                  <span style="font-size: 1.15rem; font-weight: 800; color: var(--text-white);">Duoc UC</span>
+                  <span class="tag-pill" style="color:var(--accent-orange); border-color:rgba(244,108,56,0.3); font-size:0.75rem;">2004 - 2010</span>
+                </div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-orange);">Ingeniería en Informática</div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; line-height:1.5;">
+                  Computer and Information Sciences, General.<br>Formación integral en ingeniería de software, arquitectura de sistemas, algoritmos y bases de datos.
+                </div>
+              </div>
+
+              <div style="background: var(--bg-dark-secondary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-dark);">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem;">
+                  <span style="font-size: 1.05rem; font-weight: 800; color: var(--text-white);">Liceo Industrial Chileno Alemán</span>
+                  <span class="tag-pill" style="color:var(--accent-lime); border-color:rgba(197,255,65,0.3); font-size:0.75rem;">2000 - 2004</span>
+                </div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-lime);">Técnico Nivel Medio en Electrónica</div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; line-height:1.5;">
+                  Especialización técnica en circuitos electrónicos, microcontroladores y fundamentos de programación.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: My Heroes -->
           <div style="margin-top: 2.25rem; padding-top: 1.75rem; border-top: 1px solid var(--border-dark);">
             <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--text-white); margin-bottom: 0.2rem;">
               ${dict.heroesTitle}
@@ -1678,7 +1719,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Initialize Portfolio with default/persisted language
+
+  // Email Choice Modal Logic (Copy to Clipboard or mailto)
+  const emailModal = document.getElementById("emailActionModal");
+  const emailModalClose = document.getElementById("emailModalClose");
+  const btnCopyEmail = document.getElementById("btnCopyEmail");
+  const btnOpenMailto = document.getElementById("btnOpenMailto");
+  const toastEmailCopied = document.getElementById("toastEmailCopied");
+
+  function openEmailChoiceModal(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (toastEmailCopied) toastEmailCopied.style.display = "none";
+    if (emailModal) emailModal.classList.add("active");
+  }
+
+  // Attach event listener to all email links and buttons
+  document.querySelectorAll('a[href^="mailto:"], #btnContactEmail, .btn-email-action').forEach(elem => {
+    elem.addEventListener("click", openEmailChoiceModal);
+  });
+
+  emailModalClose?.addEventListener("click", () => {
+    emailModal?.classList.remove("active");
+  });
+
+  emailModal?.addEventListener("click", (e) => {
+    if (e.target === emailModal) {
+      emailModal.classList.remove("active");
+    }
+  });
+
+  btnCopyEmail?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText("administrator@fgonzalez.cl").then(() => {
+      if (toastEmailCopied) {
+        toastEmailCopied.style.display = "block";
+        setTimeout(() => {
+          toastEmailCopied.style.display = "none";
+          emailModal?.classList.remove("active");
+        }, 1800);
+      }
+    }).catch(err => {
+      console.error("Error al copiar correo:", err);
+    });
+  });
+
+  btnOpenMailto?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    emailModal?.classList.remove("active");
+  });
+
+    // Initialize Portfolio with default/persisted language
   updateStaticTranslations();
   renderAllSections();
 });

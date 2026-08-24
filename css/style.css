@@ -717,7 +717,7 @@ html {
 /* Courses Grid & Cards */
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.85rem;
 }
 
@@ -856,7 +856,7 @@ html {
 /* Projects Cards Grid (Sawad Style) */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.1rem;
 }
 
@@ -1462,4 +1462,36 @@ html {
   color: #ffffff;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 10px 25px rgba(244, 108, 56, 0.35);
+}
+
+@media (max-width: 992px) {
+  .courses-grid, .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .courses-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Email Choice Modal Custom Styles */
+.btn-email-choice {
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.btn-email-choice:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
