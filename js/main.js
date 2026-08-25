@@ -1808,7 +1808,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "KeyB", "KeyA"
   ];
   let konamiPosition = 0;
-  let emulatorLoaded = false;
 
   const snesArcadeModal = document.getElementById("snesArcadeModal");
   const snesArcadeClose = document.getElementById("snesArcadeClose");
@@ -1819,9 +1818,9 @@ document.addEventListener("DOMContentLoaded", () => {
       snesArcadeModal.classList.add("active");
     }
 
-    if (!emulatorLoaded && snesArcadeFrame) {
-      emulatorLoaded = true;
-      const romFullUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'assets/files/Macross-Scrambled-Valkyrie-SNES.zip';
+    if (snesArcadeFrame) {
+      // Reload iframe content each time modal opens for clean WebAssembly execution
+      const romPath = 'assets/files/Macross-Scrambled-Valkyrie-SNES.zip';
       
       const frameHtml = `<!DOCTYPE html>
 <html>
@@ -1838,24 +1837,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.EJS_player = '#game';
     window.EJS_core = 'snes';
     window.EJS_gameName = 'Macross: Scrambled Valkyrie';
-    window.EJS_gameUrl = '${romFullUrl}';
+    window.EJS_gameUrl = '${romPath}';
     window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
     window.EJS_color = '#f46c38';
     window.EJS_startOnLoaded = true;
-    window.EJS_defaultControls = {
-      0: "KeyX",       // Button B -> Key X
-      1: "KeyA",       // Button Y -> Key A
-      2: "ShiftLeft",  // Select   -> Left Shift
-      3: "Enter",      // Start    -> Enter
-      4: "ArrowUp",    // Up       -> ArrowUp
-      5: "ArrowDown",  // Down     -> ArrowDown
-      6: "ArrowLeft",  // Left     -> ArrowLeft
-      7: "ArrowRight", // Right    -> ArrowRight
-      8: "KeyZ",       // Button A -> Key Z
-      9: "KeyS",       // Button X -> Key S
-      10: "KeyQ",      // Shoulder L -> Key Q
-      11: "KeyW"       // Shoulder R -> Key W
-    };
   </script>
   <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
 </body>
@@ -1865,13 +1850,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  snesArcadeClose?.addEventListener("click", () => {
-    snesArcadeModal?.classList.remove("active");
-  });
+  function closeSnesArcadeModal() {
+    if (snesArcadeModal) {
+      snesArcadeModal.classList.remove("active");
+    }
+    if (snesArcadeFrame) {
+      snesArcadeFrame.srcdoc = "";
+    }
+  }
+
+  snesArcadeClose?.addEventListener("click", closeSnesArcadeModal);
 
   snesArcadeModal?.addEventListener("click", (e) => {
     if (e.target === snesArcadeModal) {
-      snesArcadeModal.classList.remove("active");
+      closeSnesArcadeModal();
     }
   });
 
