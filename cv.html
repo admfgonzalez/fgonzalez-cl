@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Francisco González | Technical Lead & Senior Software Engineer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ── STRICT 1-PAGE LETTER SIZE (8.5 x 11 INCHES / 215.9 x 279.4 MM) FULLY OPTIMIZED LAYOUT ── */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      background-color: #f3f4f6;
+      color: #111827;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.38;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print Floating Toolbar */
+    .no-print-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: #111827;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .toolbar-left,
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-toolbar {
+      background: #1a6b7d;
+      color: #ffffff;
+      border: none;
+      padding: 0.45rem 0.9rem;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-toolbar:hover {
+      background: #134e5c;
+    }
+
+    .btn-toolbar.orange {
+      background: #f46c38;
+    }
+
+    .btn-toolbar.orange:hover {
+      background: #e05824;
+    }
+
+    .btn-lang-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #d1d5db;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-lang-toggle.active {
+      background: #f46c38;
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .btn-back {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .btn-back:hover {
+      color: #ffffff;
+    }
+
+    /* CV Sheet Outer Container (Letter Size: 215.9mm x 279.4mm) */
+    .cv-page-wrapper {
+      width: 215.9mm;
+      height: 279.4mm;
+      max-height: 279.4mm;
+      margin: 65px auto 30px auto;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+      /* Prevents overflow onto page 2 */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Teal Top Banner Bar */
+    .top-accent-bar {
+      height: 18px;
+      background-color: #1a6b7d;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .cv-inner-container {
+      padding: 22px 28px 18px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header Section */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1.5px solid #111827;
+      padding-bottom: 10px;
+      flex-shrink: 0;
+    }
+
+    .cv-name-box {
+      flex: 1;
+      padding-right: 18px;
+    }
+
+    .cv-name {
+      font-size: 24pt;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #111827;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 4px;
+    }
+
+    .cv-subtitle {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a6b7d;
+      letter-spacing: 0.02em;
+    }
+
+    .cv-photo-box {
+      width: 98px;
+      height: 120px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid #d1d5db;
+    }
+
+    .cv-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Two Column Body Grid */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 205px;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Section Headings with Light Teal Accent Strip */
+    .section-title {
+      font-size: 9.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111827;
+      background: #e4f1f5;
+      padding: 3px 8px;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      border-left: 4px solid #1a6b7d;
+      display: block;
+    }
+
+    main section:first-child .section-title,
+    aside section:first-child .section-title {
+      margin-top: 0;
+    }
+
+    /* Summary Section */
+    .summary-text {
+      font-size: 8.5pt;
+      color: #374151;
+      line-height: 1.38;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    /* Experience Section */
+    .job-block {
+      margin-bottom: 8px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .job-role {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .job-date {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .job-company {
+      font-size: 8.3pt;
+      font-weight: 700;
+      color: #1a6b7d;
+      margin-bottom: 2px;
+    }
+
+    .job-bullets {
+      list-style-type: disc;
+      padding-left: 13px;
+    }
+
+    .job-bullets li {
+      font-size: 7.8pt;
+      color: #374151;
+      margin-bottom: 1.8px;
+      line-height: 1.3;
+    }
+
+    .job-bullets li strong {
+      color: #111827;
+    }
+
+    /* Education Section */
+    .edu-block {
+      margin-bottom: 5px;
+    }
+
+    .edu-degree {
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .edu-institution {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #1a6b7d;
+    }
+
+    .edu-date {
+      font-size: 7.5pt;
+      color: #6b7280;
+    }
+
+    /* Right Column: Contact & Skills */
+    .contact-list {
+      list-style: none;
+      font-size: 8pt;
+      margin-bottom: 10px;
+    }
+
+    .contact-item {
+      margin-bottom: 4px;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    .contact-label {
+      font-weight: 800;
+      color: #111827;
+      display: block;
+      font-size: 7.8pt;
+    }
+
+    .contact-val {
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .contact-val a {
+      color: #1a6b7d;
+      text-decoration: none;
+    }
+
+    /* Skills Bullet List */
+    .skills-list {
+      list-style-type: disc;
+      padding-left: 12px;
+    }
+
+    .skills-list li {
+      font-size: 7.8pt;
+      color: #374151;
+      margin-bottom: 3px;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    .skills-list li strong {
+      color: #111827;
+      font-weight: 700;
+    }
+
+    /* ── PRINT MEDIA STRICT 1-PAGE LETTER SIZE FIT ── */
+    @media print {
+      @page {
+        size: letter portrait;
+        /* Exact Letter Dimensions: 8.5 x 11 in */
+        margin: 0;
+      }
+
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+
+      .no-print-bar {
+        display: none !important;
+      }
+
+      .cv-page-wrapper {
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 215.9mm !important;
+        height: 279.4mm !important;
+        max-height: 279.4mm !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+      }
+
+      .cv-inner-container {
+        padding: 16px 24px 16px 24px !important;
+      }
+
+      .section-title {
+        background: #e4f1f5 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .top-accent-bar {
+        background-color: #1a6b7d !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Toolbar -->
+  <div class="no-print-bar">
+    <div class="toolbar-left">
+      <a href="index.html" class="btn-back">← Volver al Sitio Web</a>
+      <div style="display:flex; gap:0.3rem; margin-left:0.5rem;">
+        <button id="btnCvEs" class="btn-lang-toggle active" onclick="switchLanguage('es')">🇪🇸 ES</button>
+        <button id="btnCvEn" class="btn-lang-toggle" onclick="switchLanguage('en')">🇺🇸 EN</button>
+      </div>
+    </div>
+
+    <div class="toolbar-right">
+      <a id="btnPdfLink" href="assets/files/FGONZALEZ_CV_ES.pdf" target="_blank" class="btn-toolbar orange">
+        📄 Descargar PDF
+      </a>
+      <button class="btn-toolbar" onclick="window.print()">
+        🖨️ Imprimir
+      </button>
+    </div>
+  </div>
+
+  <!-- Letter Size CV Sheet Container (Strict 8.5 x 11 in) -->
+  <div class="cv-page-wrapper">
+    <div class="top-accent-bar"></div>
+
+    <div class="cv-inner-container">
+      <!-- Header -->
+      <header class="cv-header">
+        <div class="cv-name-box">
+          <h1 class="cv-name">Francisco González</h1>
+          <div class="cv-subtitle" id="cvSubTitle">LÍDER TÉCNICO • SENIOR SOFTWARE ENGINEER & MAKER</div>
+        </div>
+        <div class="cv-photo-box">
+          <img src="assets/heroes/foto_profile.jpg" alt="Francisco González Portrait">
+        </div>
+      </header>
+
+      <!-- 2-Column Grid -->
+      <div class="cv-grid">
+
+        <!-- Left Column -->
+        <main>
+          <!-- Summary -->
+          <section>
+            <h2 class="section-title" id="secSummaryTitle">RESUMEN / PRESENTACIÓN</h2>
+            <p class="summary-text" id="secSummaryBody">
+              Con más de 10 años de trayectoria como <strong>Líder Técnico</strong> y <strong>Senior Software
+                Engineer</strong>, me especializo en la arquitectura de soluciones web escalables, desarrollo de
+              <strong>microservicios</strong> para el sector financiero (+13 años en banca) y adopción de tecnologías de
+              vanguardia como <strong>Amazon Q</strong>, <strong>Prompt Engineering</strong>, <strong>AWS Cloud</strong>
+              y motores <strong>BPMN 2.0</strong>.
+            </p>
+          </section>
+
+          <!-- Experience -->
+          <section>
+            <h2 class="section-title" id="secExpTitle">EXPERIENCIA</h2>
+
+            <!-- Job 1 -->
+            <div class="job-block">
+              <div class="job-header">
+                <span class="job-role" id="job1Role">Technical Lead</span>
+                <span class="job-date" id="job1Date">08/2023 - Presente</span>
+              </div>
+              <div class="job-company">SOAINT</div>
+              <ul class="job-bullets" id="job1Bullets">
+                <li>Líder técnico y arquitectura de soluciones de la principal <strong>aplicación bancaria</strong> de
+                  Chile.</li>
+                <li>Diseño de <strong>microservicios</strong> con <strong>Java 17</strong> y <strong>Spring
+                    Boot</strong> bajo estándares de alta concurrencia.</li>
+                <li>Gobernanza técnica, definición de arquitectura limpia, integración **CI/CD** y liderazgo activo de
+                  equipos.</li>
+              </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="job-block">
+              <div class="job-header">
+                <span class="job-role" id="job2Role">Technical Project Manager</span>
+                <span class="job-date">01/2021 - 08/2023</span>
+              </div>
+              <div class="job-company">ZoneKeyboards</div>
+              <ul class="job-bullets" id="job2Bullets">
+                <li>Dirección y desarrollo del portal e-commerce con <strong>React</strong>, <strong>Node.js</strong> y
+                  <strong>MongoDB</strong>.</li>
+                <li>Programación e integración de firmware personalizado en <strong>C</strong> (estándares
+                  <strong>QMK</strong> y <strong>ZMK</strong>).</li>
+                <li>Gestión de pasarelas de pago, experiencia de usuario y arquitectura cloud distribuida.</li>
+              </ul>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="job-block">
+              <div class="job-header">
+                <span class="job-role" id="job3Role">Technical Project Manager</span>
+                <span class="job-date">09/2015 - 12/2020</span>
+              </div>
+              <div class="job-company">BeeMind</div>
+              <ul class="job-bullets" id="job3Bullets">
+                <li>Planificación y migración de arquitectura legacy GWT a <strong>Microservicios</strong> con
+                  <strong>Spring Boot</strong> y <strong>Angular</strong>.</li>
+                <li>Implementación de <strong>Spring Security OAuth2/JWT</strong>, <strong>Docker</strong>,
+                  <strong>SSO</strong>, <strong>API Gateway</strong> y automatización <strong>DevOps</strong>.</li>
+                <li>Liderazgo de proyectos tecnológicos corporativos y optimización de rendimiento en sistemas
+                  empresariales.</li>
+              </ul>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="job-block">
+              <div class="job-header">
+                <span class="job-role" id="job4Role">Senior Developer (BPMN 2.0)</span>
+                <span class="job-date">10/2012 - 08/2015</span>
+              </div>
+              <div class="job-company">BeeMind</div>
+              <ul class="job-bullets" id="job4Bullets">
+                <li>Diseño e integración de flujos de trabajo <strong>BPMN 2.0</strong> con motores <strong>Activiti
+                    BPMN</strong> y <strong>JBoss BPM</strong>.</li>
+                <li>Desarrollo de interfaces Java GWT y optimización de rendimiento para <strong>Banco Penta</strong>.
+                </li>
+                <li>Construcción de módulos transaccionales de alta seguridad y procesamiento en tiempo real.</li>
+              </ul>
+            </div>
+
+            <!-- Job 5 -->
+            <div class="job-block">
+              <div class="job-header">
+                <span class="job-role" id="job5Role">Software Developer</span>
+                <span class="job-date">04/2011 - 09/2012</span>
+              </div>
+              <div class="job-company">Trabajando.com</div>
+              <ul class="job-bullets" id="job5Bullets">
+                <li>Desarrollo de sistemas web corporativos con <strong>ColdFusion</strong>, <strong>Java</strong> y
+                  bases de datos <strong>SQL Server</strong>.</li>
+                <li>Optimización de consultas SQL y arquitectura de portales de alto tráfico en Latinoamérica.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section>
+            <h2 class="section-title" id="secEduTitle">EDUCACIÓN & FORMACIÓN</h2>
+
+            <div class="edu-block">
+              <div class="edu-degree" id="edu1Degree">Ingeniería en Informática</div>
+              <div class="edu-institution">Duoc UC • Chile (Titulado con Distinción)</div>
+              <div class="edu-date">03/2004 - 12/2010</div>
+            </div>
+
+            <div class="edu-block">
+              <div class="edu-degree" id="edu2Degree">Técnico Nivel Medio en Electrónica</div>
+              <div class="edu-institution">Liceo Industrial Chileno Alemán • Chile</div>
+              <div class="edu-date">03/2000 - 12/2004</div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Right Column -->
+        <aside>
+          <!-- Contact -->
+          <section>
+            <h2 class="section-title" id="secContactTitle">CONTACTO</h2>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-label" id="lblAddress">Ubicación:</span>
+                <span class="contact-val">Santiago, Chile</span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Email:</span>
+                <span class="contact-val"><a
+                    href="mailto:administrator@fgonzalez.cl">administrator@fgonzalez.cl</a></span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">LinkedIn:</span>
+                <span class="contact-val"><a href="https://www.linkedin.com/in/fgonzalezalvarez/"
+                    target="_blank">linkedin.com/in/fgonzalezalvarez</a></span>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label" id="lblWeb">Sitio Web:</span>
+                <span class="contact-val"><a href="https://fgonzalez.cl" target="_blank">fgonzalez.cl</a></span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Skills -->
+          <section>
+            <h2 class="section-title" id="secSkillsTitle">HABILIDADES & LOGROS</h2>
+            <ul class="skills-list" id="skillsList">
+              <li><strong>IA Generativa & Cloud:</strong> Kiro, Amazon Q Developer, Prompt Engineering, AWS (Lambda, S3,
+                SQS)</li>
+              <li><strong>Backend & Arquitectura:</strong> Java 17/11/8, Spring Boot, Microservicios, BPMN 2.0 (Activiti
+                / JBoss BPM)</li>
+              <li><strong>Frontend & Lenguajes:</strong> JavaScript, TypeScript, Angular, React, Node.js, C (QMK/ZMK)
+              </li>
+              <li><strong>DevOps & DBs:</strong> Docker, DevOps CI/CD, SQL Server, MySQL, PostgreSQL, Git, GitHub
+                Actions</li>
+              <li><strong>Liderazgo & Metodologías:</strong> Liderazgo de Equipos Técnicos, Clean Architecture,
+                Principios SOLID, Agile/Scrum</li>
+              <li><strong>Banca & Finanzas:</strong> +13 años en aplicaciones financieras de alta disponibilidad</li>
+              <li><strong>Maker & Firmware:</strong> Desarrollo C embebido y custom hardware</li>
+            </ul>
+          </section>
+
+          <!-- Key Highlights / Badges Box -->
+          <section style="margin-top: 10px;">
+            <h2 class="section-title" id="secHighlightsTitle">LOGROS DESTACADOS</h2>
+            <ul class="skills-list" id="highlightsList">
+              <li><strong>+10 Años</strong> Liderando Arquitectura Web</li>
+              <li><strong>+13 Años</strong> en Sector Financiero & Banca</li>
+              <li><strong>+29 Cursos</strong> & Certificaciones Técnicas</li>
+              <li><strong>Pionero AI Dev</strong> con Amazon Q</li>
+            </ul>
+          </section>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Language Switcher Script -->
+  <script>
+    const dataCv = {
+      es: {
+        subtitle: "LÍDER TÉCNICO • SENIOR SOFTWARE ENGINEER & MAKER",
+        secSummaryTitle: "PRESENTACIÓN / SUMMARY",
+        secSummaryBody: "Con más de 10 años de trayectoria como <strong>Líder Técnico</strong> y <strong>Senior Software Engineer</strong>, me especializo en la arquitectura de soluciones web escalables, desarrollo de <strong>microservicios</strong> para el sector financiero (+13 años en banca) y adopción de tecnologías de vanguardia como <strong>Amazon Q</strong>, <strong>Prompt Engineering</strong>, <strong>AWS Cloud</strong> y motores <strong>BPMN 2.0</strong>.",
+        secExpTitle: "EXPERIENCIA",
+        job1Role: "Technical Lead",
+        job1Date: "08/2023 - Presente",
+        job1Bullets: `
+          <li>Líder técnico y arquitectura de soluciones de la principal <strong>aplicación bancaria</strong> de Chile.</li>
+          <li>Diseño de <strong>microservicios</strong> con <strong>Java 17</strong> y <strong>Spring Boot</strong> bajo estándares de alta concurrencia.</li>
+          <li>Gobernanza técnica, definición de arquitectura limpia, integración <strong>CI/CD</strong> y liderazgo activo de equipos.</li>
+        `,
+        job2Bullets: `
+          <li>Dirección y desarrollo del portal e-commerce con <strong>React</strong>, <strong>Node.js</strong> y <strong>MongoDB</strong>.</li>
+          <li>Programación e integración de firmware personalizado en <strong>C</strong> (estándares <strong>QMK</strong> y <strong>ZMK</strong>).</li>
+          <li>Gestión de pasarelas de pago, experiencia de usuario y arquitectura cloud distribuida.</li>
+        `,
+        job3Bullets: `
+          <li>Planificación y migración de arquitectura legacy GWT a <strong>Microservicios</strong> con <strong>Spring Boot</strong> y <strong>Angular</strong>.</li>
+          <li>Implementación de <strong>Spring Security OAuth2/JWT</strong>, <strong>Docker</strong>, <strong>SSO</strong>, <strong>API Gateway</strong> y automatización <strong>DevOps</strong>.</li>
+          <li>Liderazgo de proyectos tecnológicos corporativos y optimización de rendimiento en sistemas empresariales.</li>
+        `,
+        job4Bullets: `
+          <li>Diseño e integración de flujos de trabajo <strong>BPMN 2.0</strong> con motores <strong>Activiti BPMN</strong> y <strong>JBoss BPM</strong>.</li>
+          <li>Desarrollo de interfaces Java GWT y optimización de rendimiento para <strong>Banco Penta</strong>.</li>
+          <li>Construcción de módulos transaccionales de alta seguridad y procesamiento en tiempo real.</li>
+        `,
+        job5Role: "Software Developer",
+        job5Bullets: `
+          <li>Desarrollo de sistemas web corporativos con <strong>ColdFusion</strong>, <strong>Java</strong> y bases de datos <strong>SQL Server</strong>.</li>
+          <li>Optimización de consultas SQL y arquitectura de portales de alto tráfico en Latinoamérica.</li>
+        `,
+        secEduTitle: "EDUCACIÓN & FORMACIÓN",
+        edu1Degree: "Ingeniería en Informática",
+        edu2Degree: "Técnico Nivel Medio en Electrónica",
+        secContactTitle: "CONTACTO",
+        lblAddress: "Ubicación:",
+        lblWeb: "Sitio Web:",
+        secSkillsTitle: "HABILIDADES & LOGROS",
+        skillsList: `
+          <li><strong>IA Generativa & Cloud:</strong> Kiro, Amazon Q Developer, Prompt Engineering, AWS (Lambda, S3, SQS)</li>
+          <li><strong>Backend & Arquitectura:</strong> Java 17/11/8, Spring Boot, Microservicios, BPMN 2.0 (Activiti / JBoss BPM)</li>
+          <li><strong>Frontend & Lenguajes:</strong> JavaScript, TypeScript, Angular, React, Node.js, C (QMK/ZMK)</li>
+          <li><strong>DevOps & DBs:</strong> Docker, DevOps CI/CD, SQL Server, MySQL, PostgreSQL, Git, GitHub Actions</li>
+          <li><strong>Liderazgo & Metodologías:</strong> Liderazgo de Equipos Técnicos, Clean Architecture, Principios SOLID, Agile/Scrum</li>
+          <li><strong>Banca & Finanzas:</strong> +13 años en aplicaciones financieras de alta disponibilidad</li>
+          <li><strong>Maker & Firmware:</strong> Desarrollo C embebido y custom hardware</li>
+        `,
+        secHighlightsTitle: "LOGROS DESTACADOS",
+        highlightsList: `
+          <li><strong>+10 Años</strong> Liderando Arquitectura Web</li>
+          <li><strong>+13 Años</strong> en Sector Financiero & Banca</li>
+          <li><strong>+29 Cursos</strong> & Certificaciones Técnicas</li>
+          <li><strong>Pionero AI Dev</strong> con Amazon Q</li>
+        `,
+        pdfLink: "assets/files/FGONZALEZ_CV_ES.pdf",
+        pdfBtnText: "📄 Descargar PDF (ES)"
+      },
+      en: {
+        subtitle: "TECHNICAL LEAD • SENIOR SOFTWARE ENGINEER & MAKER",
+        secSummaryTitle: "SUMMARY",
+        secSummaryBody: "With over 10 years of experience as a <strong>Technical Lead</strong> and <strong>Senior Software Engineer</strong>, I specialize in scalable web solution architecture, <strong>microservices</strong> development for the financial sector (+13 years in banking), and adoption of cutting-edge technologies like <strong>Amazon Q</strong>, <strong>Prompt Engineering</strong>, <strong>AWS Cloud</strong>, and <strong>BPMN 2.0</strong> engines.",
+        secExpTitle: "EXPERIENCE",
+        job1Role: "Technical Lead",
+        job1Date: "08/2023 - Present",
+        job1Bullets: `
+          <li>Technical leadership and solution architecture for the main <strong>banking application</strong> in Chile.</li>
+          <li>Design of <strong>microservices</strong> using <strong>Java 17</strong> and <strong>Spring Boot</strong> under high-concurrency standards.</li>
+          <li>Technical governance, clean architecture definition, <strong>CI/CD</strong> integration, and active team management.</li>
+        `,
+        job2Bullets: `
+          <li>Direction and development of the e-commerce portal with <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>.</li>
+          <li>Custom firmware programming in <strong>C</strong> (<strong>QMK</strong> and <strong>ZMK</strong> standards).</li>
+          <li>Payment gateway integration, user experience optimization, and distributed cloud architecture.</li>
+        `,
+        job3Bullets: `
+          <li>Planning and migration of legacy GWT architecture to <strong>Microservices</strong> with <strong>Spring Boot</strong> and <strong>Angular</strong>.</li>
+          <li>Implementation of <strong>Spring Security OAuth2/JWT</strong>, <strong>Docker</strong>, <strong>SSO</strong>, <strong>API Gateway</strong>, and <strong>DevOps</strong> automation.</li>
+          <li>Corporate technical project leadership and enterprise systems performance tuning.</li>
+        `,
+        job4Bullets: `
+          <li>Design and integration of <strong>BPMN 2.0</strong> workflows using <strong>Activiti BPMN</strong> and <strong>JBoss BPM</strong> engines.</li>
+          <li>Development of Java GWT interfaces and performance optimization for <strong>Banco Penta</strong>.</li>
+          <li>Building high-security transactional modules and real-time processing engines.</li>
+        `,
+        job5Role: "Software Developer",
+        job5Bullets: `
+          <li>Development of enterprise web platforms using <strong>ColdFusion</strong>, <strong>Java</strong>, and <strong>SQL Server</strong> databases.</li>
+          <li>SQL query optimization and high-traffic portal architecture across Latin America.</li>
+        `,
+        secEduTitle: "EDUCATION & ACADEMICS",
+        edu1Degree: "Software Engineering",
+        edu2Degree: "Electronics Technician",
+        secContactTitle: "CONTACT",
+        lblAddress: "Location:",
+        lblWeb: "Website:",
+        secSkillsTitle: "SKILLS & COMPETENCIES",
+        skillsList: `
+          <li><strong>Generative AI & Cloud:</strong> Kiro, Amazon Q Developer, Prompt Engineering, AWS (Lambda, S3, SQS)</li>
+          <li><strong>Backend & Architecture:</strong> Java 17/11/8, Spring Boot, Microservices, BPMN 2.0 (Activiti / JBoss BPM)</li>
+          <li><strong>Frontend & Languages:</strong> JavaScript, TypeScript, Angular, React, Node.js, C (QMK/ZMK)</li>
+          <li><strong>DevOps & DBs:</strong> Docker, DevOps CI/CD, SQL Server, MySQL, PostgreSQL, Git, GitHub Actions</li>
+          <li><strong>Leadership & Methodologies:</strong> Technical Team Leadership, Clean Architecture, SOLID Principles, Agile/Scrum</li>
+          <li><strong>Banking & Finance:</strong> +13 years in high-availability financial systems</li>
+          <li><strong>Maker & Firmware:</strong> Embedded C development & custom hardware</li>
+        `,
+        secHighlightsTitle: "KEY HIGHLIGHTS",
+        highlightsList: `
+          <li><strong>+10 Years</strong> Leading Web Architecture</li>
+          <li><strong>+13 Years</strong> in Finance & Banking Sector</li>
+          <li><strong>+29 Courses</strong> & Tech Certifications</li>
+          <li><strong>AI Dev Pioneer</strong> with Amazon Q</li>
+        `,
+        pdfLink: "assets/files/FGONZALEZ_CV_EN.pdf",
+        pdfBtnText: "📄 Download PDF (EN)"
+      }
+    };
+
+    function switchLanguage(lang) {
+      const cv = dataCv[lang] || dataCv.es;
+      document.documentElement.lang = lang;
+
+      document.getElementById("btnCvEs").classList.toggle("active", lang === 'es');
+      document.getElementById("btnCvEn").classList.toggle("active", lang === 'en');
+
+      document.getElementById("cvSubTitle").innerHTML = cv.subtitle;
+      document.getElementById("secSummaryTitle").innerText = cv.secSummaryTitle;
+      document.getElementById("secSummaryBody").innerHTML = cv.secSummaryBody;
+      document.getElementById("secExpTitle").innerText = cv.secExpTitle;
+      document.getElementById("job1Role").innerText = cv.job1Role;
+      document.getElementById("job1Date").innerText = cv.job1Date;
+      document.getElementById("job1Bullets").innerHTML = cv.job1Bullets;
+      document.getElementById("job2Bullets").innerHTML = cv.job2Bullets;
+      document.getElementById("job3Bullets").innerHTML = cv.job3Bullets;
+      document.getElementById("job4Bullets").innerHTML = cv.job4Bullets;
+      if (document.getElementById("job5Role")) document.getElementById("job5Role").innerText = cv.job5Role;
+      if (document.getElementById("job5Bullets")) document.getElementById("job5Bullets").innerHTML = cv.job5Bullets;
+      document.getElementById("secEduTitle").innerText = cv.secEduTitle;
+      document.getElementById("edu1Degree").innerText = cv.edu1Degree;
+      document.getElementById("edu2Degree").innerText = cv.edu2Degree;
+      document.getElementById("secContactTitle").innerText = cv.secContactTitle;
+      document.getElementById("lblAddress").innerText = cv.lblAddress;
+      document.getElementById("lblWeb").innerText = cv.lblWeb;
+      document.getElementById("secSkillsTitle").innerText = cv.secSkillsTitle;
+      document.getElementById("skillsList").innerHTML = cv.skillsList;
+      if (document.getElementById("secHighlightsTitle")) document.getElementById("secHighlightsTitle").innerText = cv.secHighlightsTitle;
+      if (document.getElementById("highlightsList")) document.getElementById("highlightsList").innerHTML = cv.highlightsList;
+
+      const pdfBtn = document.getElementById("btnPdfLink");
+      if (pdfBtn) {
+        pdfBtn.href = cv.pdfLink;
+        pdfBtn.innerHTML = cv.pdfBtnText;
+      }
+    }
+
+    // Auto-detect language parameter if passed (e.g. cv.html?lang=en)
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialLang = urlParams.get('lang') || localStorage.getItem('portfolioLang') || 'es';
+    switchLanguage(initialLang);
+  </script>
+</body>
+
+</html>

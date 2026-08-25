@@ -1495,3 +1495,29 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
+
+/* Noscript Banner Styles */
+.noscript-banner {
+  background: linear-gradient(135deg, #2a1b12 0%, #151312 100%);
+  border-bottom: 2px solid var(--accent-orange);
+  color: var(--text-white);
+  padding: 1.1rem 1.5rem;
+  position: relative;
+  z-index: 2000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.noscript-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.noscript-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}

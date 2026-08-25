@@ -70,7 +70,9 @@ const i18n = {
     toastEmailCopiedTxt: "¡Correo administrator@fgonzalez.cl copiado al portapapeles! 📋",
     eduTitle: "🎓 Educación & Formación Académica",
     eduSubtitle: "Títulos Académicos & Titulaciones",
-    locationText: "Gran Santiago, Chile"
+    locationText: "Gran Santiago, Chile",
+    btnDownloadCv: "📄 Ver / Descargar CV PDF ↗",
+    btnCvNav: "CV PDF 📄"
   },
   en: {
     navExp: "Experience",
@@ -1240,12 +1242,16 @@ document.addEventListener("DOMContentLoaded", () => {
     pas: false
   };
 
-  const sectionLimits = {
-    exp: 3,       // 3 most recent jobs initially
-    courses: 3,   // 3 items initially (1st row)
-    proj: 3,      // 3 items initially (1st row)
-    pas: 3        // 3 items initially (1st row)
-  };
+  // Function to determine initial card limit based on responsive layout
+  function getInitialLimit(sectionKey) {
+    if (sectionKey === 'exp') return 3;
+    const width = window.innerWidth;
+    // On 2-column screens (tablet / medium resolution), show 4 cards (2 full rows x 2 columns)
+    if (width <= 992 && width > 640) {
+      return 4;
+    }
+    return 3; // Desktop (3 cards = 1 full row) or Mobile
+  }
 
   // Function to apply UI translations to static HTML elements
   function updateStaticTranslations() {
@@ -1280,7 +1286,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render Experience List
     const expAll = experienceData[currentLang];
-    const expVisible = sectionExpanded.exp ? expAll : expAll.slice(0, sectionLimits.exp);
+    const expLimit = getInitialLimit('exp');
+    const expVisible = sectionExpanded.exp ? expAll : expAll.slice(0, expLimit);
     const experienceContainer = document.getElementById("experienceList");
     if (experienceContainer) {
       experienceContainer.innerHTML = expVisible.map(exp => `
@@ -1302,9 +1309,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const wrapExp = document.getElementById("wrapMoreExp");
     const txtExp = document.getElementById("txtMoreExp");
     if (wrapExp && txtExp) {
-      if (expAll.length > sectionLimits.exp) {
+      if (expAll.length > expLimit) {
         wrapExp.style.display = "flex";
-        const rem = expAll.length - sectionLimits.exp;
+        const rem = expAll.length - expLimit;
         txtExp.innerText = sectionExpanded.exp ? dict.verMenos : `${dict.verMas} (${rem})`;
       } else {
         wrapExp.style.display = "none";
@@ -1332,7 +1339,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render Courses & Certifications Grid (sorted newest first)
     const coursesAll = [...coursesData[currentLang]].sort((a, b) => parseDateToScore(b.date) - parseDateToScore(a.date));
-    const coursesVisible = sectionExpanded.courses ? coursesAll : coursesAll.slice(0, sectionLimits.courses);
+    const coursesLimit = getInitialLimit('courses');
+    const coursesVisible = sectionExpanded.courses ? coursesAll : coursesAll.slice(0, coursesLimit);
     const coursesContainer = document.getElementById("coursesGrid");
     if (coursesContainer) {
       coursesContainer.innerHTML = coursesVisible.map(course => `
@@ -1353,9 +1361,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const wrapCourses = document.getElementById("wrapMoreCourses");
     const txtCourses = document.getElementById("txtMoreCourses");
     if (wrapCourses && txtCourses) {
-      if (coursesAll.length > sectionLimits.courses) {
+      if (coursesAll.length > coursesLimit) {
         wrapCourses.style.display = "flex";
-        const rem = coursesAll.length - sectionLimits.courses;
+        const rem = coursesAll.length - coursesLimit;
         txtCourses.innerText = sectionExpanded.courses ? dict.verMenos : `${dict.verMas} (${rem})`;
       } else {
         wrapCourses.style.display = "none";
@@ -1364,7 +1372,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render Projects Grid
     const projAll = projectsData[currentLang];
-    const projVisible = sectionExpanded.proj ? projAll : projAll.slice(0, sectionLimits.proj);
+    const projLimit = getInitialLimit('proj');
+    const projVisible = sectionExpanded.proj ? projAll : projAll.slice(0, projLimit);
     const projectsContainer = document.getElementById("projectsGrid");
     if (projectsContainer) {
       projectsContainer.innerHTML = projVisible.map(proj => `
@@ -1389,9 +1398,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const wrapProj = document.getElementById("wrapMoreProjects");
     const txtProj = document.getElementById("txtMoreProjects");
     if (wrapProj && txtProj) {
-      if (projAll.length > sectionLimits.proj) {
+      if (projAll.length > projLimit) {
         wrapProj.style.display = "flex";
-        const rem = projAll.length - sectionLimits.proj;
+        const rem = projAll.length - projLimit;
         txtProj.innerText = sectionExpanded.proj ? dict.verMenos : `${dict.verMas} (${rem})`;
       } else {
         wrapProj.style.display = "none";
@@ -1400,7 +1409,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render Passions Grid
     const pasAll = passionsData[currentLang];
-    const pasVisible = sectionExpanded.pas ? pasAll : pasAll.slice(0, sectionLimits.pas);
+    const pasLimit = getInitialLimit('pas');
+    const pasVisible = sectionExpanded.pas ? pasAll : pasAll.slice(0, pasLimit);
     const passionsContainer = document.getElementById("passionsGrid");
     if (passionsContainer) {
       passionsContainer.innerHTML = pasVisible.map(pas => `
@@ -1425,9 +1435,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const wrapPas = document.getElementById("wrapMorePassions");
     const txtPas = document.getElementById("txtMorePassions");
     if (wrapPas && txtPas) {
-      if (pasAll.length > sectionLimits.pas) {
+      if (pasAll.length > pasLimit) {
         wrapPas.style.display = "flex";
-        const rem = pasAll.length - sectionLimits.pas;
+        const rem = pasAll.length - pasLimit;
         txtPas.innerText = sectionExpanded.pas ? dict.verMenos : `${dict.verMas} (${rem})`;
       } else {
         wrapPas.style.display = "none";
@@ -1612,6 +1622,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to set application language
   function setLanguage(lang) {
+    // Update CV icon link target
+    const cvUrl = lang === 'en' ? 'http://localhost:3000/cv?lang=en' : 'http://localhost:3000/cv';
+    document.querySelectorAll('.btn-cv-pdf-link').forEach(el => {
+      el.href = cvUrl;
+    });
     if (lang !== 'es' && lang !== 'en') return;
     currentLang = lang;
     localStorage.setItem('portfolioLang', lang);
@@ -1737,7 +1752,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Attach event listener to all email links and buttons
-  document.querySelectorAll('a[href^="mailto:"], #btnContactEmail, .btn-email-action').forEach(elem => {
+  document.querySelectorAll('a[href^="mailto:"]:not(#btnOpenMailto), #btnContactEmail, .btn-email-action').forEach(elem => {
     elem.addEventListener("click", openEmailChoiceModal);
   });
 
@@ -1769,9 +1784,20 @@ document.addEventListener("DOMContentLoaded", () => {
   btnOpenMailto?.addEventListener("click", (e) => {
     e.stopPropagation();
     emailModal?.classList.remove("active");
+    // Explicitly open default OS mail client via mailto
+    window.location.href = "mailto:administrator@fgonzalez.cl";
   });
 
-    // Initialize Portfolio with default/persisted language
+    // Handle window resize for dynamic responsive card limits
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      renderAllSections();
+    }, 150);
+  });
+
+  // Initialize Portfolio with default/persisted language
   updateStaticTranslations();
   renderAllSections();
 });
