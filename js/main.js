@@ -1798,7 +1798,109 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150);
   });
 
-  // Initialize Portfolio with default/persisted language
+
+  // 🕹️ Konami Code SNES Arcade Easter Egg Handler
+  const konamiCodeSequence = [
+    "ArrowUp", "ArrowUp",
+    "ArrowDown", "ArrowDown",
+    "ArrowLeft", "ArrowRight",
+    "ArrowLeft", "ArrowRight",
+    "KeyB", "KeyA"
+  ];
+  let konamiPosition = 0;
+  let emulatorLoaded = false;
+
+  const snesArcadeModal = document.getElementById("snesArcadeModal");
+  const snesArcadeClose = document.getElementById("snesArcadeClose");
+  const snesArcadeFrame = document.getElementById("snesArcadeFrame");
+
+  function openSnesArcadeModal() {
+    if (snesArcadeModal) {
+      snesArcadeModal.classList.add("active");
+    }
+
+    if (!emulatorLoaded && snesArcadeFrame) {
+      emulatorLoaded = true;
+      const romFullUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'assets/files/Macross-Scrambled-Valkyrie-SNES.zip';
+      
+      const frameHtml = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body { margin:0; padding:0; width:100%; height:100%; background:#000; overflow:hidden; }
+    #game { width:100%; height:100%; }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+  <script>
+    window.EJS_player = '#game';
+    window.EJS_core = 'snes';
+    window.EJS_gameName = 'Macross: Scrambled Valkyrie';
+    window.EJS_gameUrl = '${romFullUrl}';
+    window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+    window.EJS_color = '#f46c38';
+    window.EJS_startOnLoaded = true;
+    window.EJS_defaultControls = {
+      0: "KeyX",       // Button B -> Key X
+      1: "KeyA",       // Button Y -> Key A
+      2: "ShiftLeft",  // Select   -> Left Shift
+      3: "Enter",      // Start    -> Enter
+      4: "ArrowUp",    // Up       -> ArrowUp
+      5: "ArrowDown",  // Down     -> ArrowDown
+      6: "ArrowLeft",  // Left     -> ArrowLeft
+      7: "ArrowRight", // Right    -> ArrowRight
+      8: "KeyZ",       // Button A -> Key Z
+      9: "KeyS",       // Button X -> Key S
+      10: "KeyQ",      // Shoulder L -> Key Q
+      11: "KeyW"       // Shoulder R -> Key W
+    };
+  </script>
+  <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+</html>`;
+
+      snesArcadeFrame.srcdoc = frameHtml;
+    }
+  }
+
+  snesArcadeClose?.addEventListener("click", () => {
+    snesArcadeModal?.classList.remove("active");
+  });
+
+  snesArcadeModal?.addEventListener("click", (e) => {
+    if (e.target === snesArcadeModal) {
+      snesArcadeModal.classList.remove("active");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const code = e.code;
+    const key = e.key ? e.key.toLowerCase() : "";
+    const expected = konamiCodeSequence[konamiPosition];
+
+    let isMatch = false;
+    if (code === expected) {
+      isMatch = true;
+    } else if (expected === "KeyB" && (key === "b" || code === "KeyB")) {
+      isMatch = true;
+    } else if (expected === "KeyA" && (key === "a" || code === "KeyA")) {
+      isMatch = true;
+    }
+
+    if (isMatch) {
+      konamiPosition++;
+      if (konamiPosition === konamiCodeSequence.length) {
+        konamiPosition = 0;
+        openSnesArcadeModal();
+      }
+    } else {
+      konamiPosition = 0;
+    }
+  });
+
+    // Initialize Portfolio with default/persisted language
   updateStaticTranslations();
   renderAllSections();
 });
