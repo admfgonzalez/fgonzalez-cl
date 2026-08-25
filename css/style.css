@@ -1551,3 +1551,37 @@ html {
   font-size: 1.8rem;
   flex-shrink: 0;
 }
+
+/* Konami Code Secret Hover Hint on Video Games Card (2-second hover delay) */
+.project-card-sawad[data-id="video-games"] {
+  position: relative;
+}
+
+.konami-hover-hint {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(20, 18, 17, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--accent-orange);
+  color: var(--accent-orange);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  transition-delay: 0s; /* Fades out immediately when mouse leaves */
+  box-shadow: 0 4px 15px rgba(244, 108, 56, 0.4);
+  z-index: 10;
+}
+
+.project-card-sawad[data-id="video-games"]:hover .konami-hover-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition-delay: 2s; /* Waits 2 seconds of continuous hover before appearing */
+}

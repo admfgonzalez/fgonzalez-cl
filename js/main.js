@@ -1416,6 +1416,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (passionsContainer) {
       passionsContainer.innerHTML = pasVisible.map(pas => `
         <div class="project-card-sawad btn-pas-modal" data-id="${pas.id}">
+          ${pas.id === 'video-games' ? `
+            <div class="konami-hover-hint">
+              <span>🕹️ Secret Code: ⬆️ ⬆️ ⬇️ ⬇️ ⬅️ ➡️ ⬅️ ➡️ B A</span>
+            </div>
+          ` : ''}
           <div>
             <img src="${pas.image}" alt="${pas.title}" class="card-img-thumb" loading="lazy">
             <div class="proj-top">
