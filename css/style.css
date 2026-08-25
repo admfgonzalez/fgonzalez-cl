@@ -260,6 +260,36 @@ html {
   box-shadow: 0 4px 15px var(--accent-glow);
 }
 
+
+/* Fixed Top-Left Corner CV Button Badge */
+.fixed-cv-corner {
+  position: fixed !important;
+  top: 1.25rem;
+  left: 1.5rem;
+  right: auto;
+  bottom: auto;
+  width: max-content;
+  z-index: 1001;
+  background: rgba(26, 24, 23, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.fixed-cv-corner:hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(244, 108, 56, 0.35);
+}
+
 /* Fixed Top-Right Corner Language Switcher Badge */
 .fixed-lang-corner {
   position: fixed !important;

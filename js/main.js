@@ -71,6 +71,7 @@ const i18n = {
     eduTitle: "🎓 Educación & Formación Académica",
     eduSubtitle: "Títulos Académicos & Titulaciones",
     locationText: "Gran Santiago, Chile",
+    badgeCvText: "CV",
     btnDownloadCv: "📄 Ver / Descargar CV PDF ↗",
     btnCvNav: "CV PDF 📄"
   },
