@@ -75,7 +75,7 @@
   <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
   <!-- Fixed Top-Left Corner CV Button Badge -->
-  <a href="http://localhost:3000/cv" target="_blank" class="fixed-cv-corner btn-cv-pdf-link" aria-label="Ver CV / View CV" title="Ver CV de 1 Plana (http://localhost:3000/cv)">
+  <a href="cv.html" target="_blank" class="fixed-cv-corner btn-cv-pdf-link" aria-label="Ver CV / View CV" title="Ver CV de 1 Plana">
     <span style="font-size:0.95rem;">📄</span>
     <span class="lang-text" style="font-weight:700; font-size:0.82rem; color:var(--text-white);" data-i18n="badgeCvText">CV</span>
   </a>
@@ -134,11 +134,11 @@
           </p>
 
           <!-- Clickable button to open About Me Modal -->
-          <button class="btn-about-modal" id="btnAboutMeModal" style="margin-bottom:1.25rem; width:100%;" data-i18n="btnAboutMe">
+          <button class="btn-about-modal" id="btnAboutMeModal" data-i18n="btnAboutMe">
             Sobre mí (Historia & Valores) ↗
           </button>
 
-          <div class="profile-location-badge" style="display:flex; align-items:center; justify-content:center; gap:0.4rem; font-size:0.82rem; color:var(--text-muted); margin-bottom:0.75rem;">
+          <div class="profile-location-badge">
             <span>📍 Gran Santiago, Chile</span>
           </div>
 
@@ -158,7 +158,7 @@
                 </path>
               </svg>
             </a>
-            <a href="http://localhost:3000/cv" target="_blank" class="social-icon-btn btn-cv-pdf-link"
+            <a href="cv.html" target="_blank" class="social-icon-btn btn-cv-pdf-link"
               title="Ver / Descargar CV (PDF)" aria-label="Descargar CV PDF">
               <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -337,11 +337,11 @@
   
   <!-- Email Choice Modal -->
   <div class="modal-backdrop" id="emailActionModal">
-    <div class="modal-content" style="max-width: 480px; text-align: center; padding: 2.25rem 1.75rem;">
+    <div class="modal-content modal-email-content">
       <button class="modal-close" id="emailModalClose" aria-label="Cerrar modal">&times;</button>
       <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">✉️</div>
       <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.35rem; color: var(--text-white);" data-i18n="emailModalTitle">Contactar por Email</h3>
-      <div style="font-size: 0.95rem; color: var(--accent-orange); font-weight: 700; margin-bottom: 1rem;">administrator@fgonzalez.cl</div>
+      <div style="font-size: 0.95rem; color: var(--accent-orange); font-weight: 700; margin-bottom: 1rem; word-break: break-all;">administrator@fgonzalez.cl</div>
       <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;" data-i18n="emailModalSubtitle">
         ¿Cómo prefieres continuar? Puedes copiar la dirección de correo al portapapeles o abrir tu cliente de correo predeterminado.
       </p>
@@ -363,7 +363,7 @@
 
   <!-- Detail Modal -->
   <div class="modal-backdrop" id="detailsModal">
-    <div class="modal-content" style="max-width: 760px; max-height: 85vh; overflow-y: auto;">
+    <div class="modal-content modal-details-content">
       <button class="modal-close" id="modalClose" aria-label="Cerrar modal">&times;</button>
       <img id="modalImgPreview" class="modal-img-preview" src="" alt="Preview">
       <h3 style="font-size: 1.6rem; margin-bottom: 0.25rem;" id="modalTitle">Título</h3>
@@ -392,7 +392,7 @@
 
   <!-- SNES Arcade Easter Egg Modal (Konami Code Secret) -->
   <div class="modal-backdrop" id="snesArcadeModal">
-    <div class="modal-content" style="max-width: 920px; width: 95vw; background: var(--bg-dark-primary); border: 2px solid var(--accent-orange); padding: 1.5rem; text-align: center; box-shadow: 0 0 40px rgba(244, 108, 56, 0.4);">
+    <div class="modal-content modal-arcade-content">
       <button class="modal-close" id="snesArcadeClose" aria-label="Cerrar emulador">&times;</button>
       
       <div style="display:flex; align-items:center; justify-content:center; gap:0.75rem; margin-bottom: 0.35rem;">

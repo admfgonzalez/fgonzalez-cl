@@ -1629,7 +1629,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to set application language
   function setLanguage(lang) {
     // Update CV icon link target
-    const cvUrl = lang === 'en' ? 'http://localhost:3000/cv?lang=en' : 'http://localhost:3000/cv';
+    const cvUrl = lang === 'en' ? 'cv.html?lang=en' : 'cv.html';
     document.querySelectorAll('.btn-cv-pdf-link').forEach(el => {
       el.href = cvUrl;
     });
